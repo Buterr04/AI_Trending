@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub AI Trending 周报 · 2026.06.02 – 06.08</title>
+<style>
+  :root {
+    --bg-start: #0f0c29;
+    --bg-mid: #1a1a3e;
+    --bg-end: #24243e;
+    --card-bg: rgba(255,255,255,0.04);
+    --card-border: rgba(255,255,255,0.08);
+    --card-hover: rgba(255,255,255,0.07);
+    --accent: #7c6aef;
+    --accent-light: #a78bfa;
+    --text-primary: #f0f0f5;
+    --text-secondary: #a0a0b8;
+    --text-muted: #6b6b80;
+    --star-gold: #f5c542;
+    --tag-bg: rgba(124,106,239,0.15);
+    --tag-text: #b4a5f5;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-mid) 50%, var(--bg-end) 100%);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 40px 20px 60px; }
+
+  /* Header */
+  .header { text-align: center; margin-bottom: 48px; }
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #7c6aef 0%, #60a5fa 50%, #34d399 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+  }
+  .header .subtitle {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+  }
+  .header .meta {
+    margin-top: 12px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+  .header .meta span { margin: 0 8px; }
+
+  /* Stats bar */
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  .stat-item {
+    text-align: center;
+  }
+  .stat-num {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--accent-light);
+  }
+  .stat-label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  /* Card */
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin-bottom: 18px;
+    transition: background 0.2s, border-color 0.2s;
+    position: relative;
+  }
+  .card:hover {
+    background: var(--card-hover);
+    border-color: rgba(124,106,239,0.25);
+  }
+  .card-rank {
+    position: absolute;
+    top: 18px;
+    left: 24px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    background: rgba(255,255,255,0.06);
+    padding: 2px 8px;
+    border-radius: 6px;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-left: 40px;
+  }
+  .card-header a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+  .card-header a:hover { color: var(--accent-light); }
+  .card-lang {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 2px 9px;
+    border-radius: 20px;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+  .lang-python { background: rgba(53,114,165,0.2); color: #6fb3e0; }
+  .lang-typescript { background: rgba(49,120,198,0.2); color: #61a5f5; }
+  .lang-javascript { background: rgba(241,224,90,0.15); color: #e8d56a; }
+  .lang-html { background: rgba(227,76,38,0.15); color: #ef8a62; }
+  .lang-shell { background: rgba(130,180,80,0.15); color: #9cc95a; }
+  .lang-rust { background: rgba(222,165,100,0.15); color: #dea564; }
+  .lang-go { background: rgba(0,173,216,0.15); color: #47c8e0; }
+
+  .card-stars {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 0.82rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .star-total { color: var(--star-gold); font-weight: 600; }
+  .star-week {
+    color: #34d399;
+    font-weight: 600;
+    background: rgba(52,211,153,0.1);
+    padding: 2px 8px;
+    border-radius: 10px;
+  }
+
+  .card-desc {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+    line-height: 1.7;
+  }
+
+  .card-section-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+
+  .features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 14px;
+  }
+  .features li {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    padding: 3px 0 3px 16px;
+    position: relative;
+  }
+  .features li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent-light);
+    font-size: 0.75rem;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .tag {
+    font-size: 0.72rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    font-weight: 500;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--card-border);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .footer a { color: var(--accent-light); text-decoration: none; }
+
+  @media (max-width: 600px) {
+    .container { padding: 24px 14px 40px; }
+    .card { padding: 18px 16px; }
+    .card-header { flex-direction: column; align-items: flex-start; gap: 6px; padding-left: 32px; }
+    .card-stars { margin-top: 4px; }
+    .header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <h1>🔥 GitHub AI Trending 周报</h1>
+    <div class="subtitle">2026 年 6 月 2 日 – 6 月 8 日 · AI / ML / Agent 领域热门开源项目</div>
+    <div class="meta">
+      <span>📅 抓取时间：2026-06-08 09:00 CST</span>
+      <span>·</span>
+      <span>数据来源：GitHub Trending (Weekly)</span>
+    </div>
+  </header>
+
+  <div class="stats">
+    <div class="stat-item"><div class="stat-num">20</div><div class="stat-label">精选项目</div></div>
+    <div class="stat-item"><div class="stat-num">7</div><div class="stat-label">编程语言</div></div>
+    <div class="stat-item"><div class="stat-num">114K+</div><div class="stat-label">本周新增 Star</div></div>
+  </div>
+
+  <!-- #1 headroom -->
+  <div class="card">
+    <div class="card-rank">#1</div>
+    <div class="card-header">
+      <div>
+        <a href="https://github.com/chopratejas/headroom" target="_blank">chopratejas/headroom</a>
+        <span class="card-lang lang-python">Python</span>
+      </div>
+      <div class="card-stars">
+        <span class="star-total">★ 16,930</span>
+        <span class="star-week">+14,272 本周</span>
+      </div>
+    </div>
+    <div class="card-desc">
+      <strong>一句话：</strong>在 LLM 处理前压缩工具输出、日志、文件和 RAG 块，减少 60–95% 的 Token 消耗，答案质量不变。
+    </div>
+    <div class="card-section-title">核心功能</div>
+    <ul class="features">
+      <li>智能压缩：对工具输出、日志、代码文件进行语义级压缩，保留关键信息</li>
+      <li>多模式部署：支持库调用、HTTP 代理、MCP Server 三种接入方式</li>
+      <li>RAG 块优化：对检索增强生成中的文本块进行压缩，降低向量存储与推理成本</li>
+    </ul>
+    <div class="card-section-title">适用场景</div>
+    <div class="tags">
+      <span class="tag">LLM 成本优化</span>
+      <span class="tag">RAG 压缩</span>
+      <span class="tag">Agent 输出精简</span>
+      <span class="tag">Token 节省</span>
+    </div>
+  </div>
+
+  <!-- #2 microsoft/markitdown -->
+  <div class="card">
+    <div class="card-rank">#2</div>
+    <div class="card-header">
+      <div>
+        <a href="https://github.com/microsoft/markitdown" target="_blank">microsoft/markitdown</a>
+        <span class="card-lang lang-python">Python</span>
+      </div>
+      <div class="card-stars">
+        <span class="star-total">★ 147,347</span>
+        <span class="star-week">+13,359 本周</span>
+      </div>
+    </div>
+    <div class="card-desc">
+      <strong>一句话：</strong>微软出品的万能文件转 Markdown 工具，支持 Office 文档、PDF、图片等数十种格式，为 AI 管线提供标准化输入。
+    </div>
+    <div class="card-section-title">核心功能</div>
+    <ul class="features">
+      <li>格式全覆盖：支持 Word、Excel、PPT、PDF、图片、HTML、音视频等文件转 Markdown</li>
+      <li>AI Pipeline 友好：输出纯净 Markdown，可直接喂给 LLM 做 RAG 或分析</li>
+      <li>插件架构：可扩展新的文件格式解析器，社区生态活跃</li>
+    </ul>
+    <div class="card-section-title">适用场景</div>
+    <div class="tags">
+      <span class="tag">RAG 数据预处理</span>
+      <span class="tag">文档解析</span>
+      <span class="tag">AI 管线构建</span>
+      <span class="tag">企业知识库</span>
+    </div>
+  </div>
+
+  <!-- #3 ECC -->
+  <div class="card">
+    <div class="card-rank">#3</div>
+    <div class="card-header">
+      <div>
+        <a href="https://github.com/affaan-m/ECC" target="_blank">affaan-m/ECC</a>
+        <span class="card-lang lang-javascript">JavaScript</span>
+      </div>
+      <div class="card-stars">
+        <span class="star-total">★ 209,845</span>
+        <span class="star-week">+10,207 本周</span>
+      </div>
+    </div>
+    <div class="card-desc">
+      <strong>一句话：</strong>面向 Claude Code、Codex、Cursor 等 AI 编程工具的 Agent 性能优化框架，提供技能、记忆、安全与研究驱动开发能力。
+    </div>
+    <div class="card-section-title">核心功能</div>
+    <ul class="features">
+      <li>Agent 性能调优：为 AI 编程助手提供技能模块、本能系统和记忆机制</li>
+      <li>安全加固：内置安全策略，防止 Agent 执行危险操作</li>
+      <li>多平台适配：支持 Claude Code、Codex、Opencode、Cursor 等主流 AI IDE</li>
+    </ul>
+    <div class="card-section-title">适用场景</div>
+    <div class="tags">
+      <span class="tag">AI 编程助手优化</span>
+      <span class="tag">Agent 调优</span>
+      <span class="tag">安全增强</span>
+      <span class="tag">开发效率提升</span>
+    </div>
+  </div>
+
+  <!-- #4 NousResearch/hermes-agent -->
+  <div class="card">
+    <div class="card-rank">#4</div>
+    <div class="card-header">
+      <div>
+        <a href="https://github.com/NousResearch/hermes-agent" target="_blank">NousResearch/hermes-agent</a>
+        <span class="card-lang lang-python">Python</span>
+      </div>
+      <div class="card-stars">
+        <span class="star-total">★ 185,947</span>
+        <span class="star-week">+11,427 本周</span>
+      </div>
+    </div>
+    <div class="card-desc">
+      <strong>一句话：</strong>Nous Research 推出的开源 AI Agent 框架——"与你一起成长的 Agent"，支持自主学习、记忆演化和工具调用。
+    </div>
+    <div class="card-section-title">核心功能</div>
+    <ul class="features">
+      <li>自适应 Agent：Agent 可根据交互反馈自动调整行为策略和工具使用方式</li>
+      <li>持久记忆：支持长期记忆存储与检索，Agent 能"记住"之前的对话和决策</li>
+      <li>工具生态：内置丰富的工具集，可灵活扩展与集成外部 API</li>
+    </ul>
+    <div class="card-section-title">适用场景</div>
+    <div class="tags">
+      <span class="tag">自主 Agent</span>
+      <span class="tag">个人助手</span>
+      <span class="tag">自动化工作流</span>
+      <span class="tag">研究原型</span>
+    </div>
+  </div>
+
+  <!-- #5 Harry0703/MoneyPrinterTurbo -->
+  <div class="card">
+    <div class="card-rank">#5</div>
+    <div class="card-header">
+      <div>
+        <a href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank">harry0703/MoneyPrinterTurbo</a>
+        <span class="card-lang lang-python">Python</span>
+      </div>
+      <div class="card-stars">
+        <span class="star-total">★ 81,195</span>
+        <span class="star-week">+7,992 本周</span>
+      </div>
+    </div>
+    <div class="card-desc">
+      <strong>一句话：</strong>利用 AI 大模型一键生成高清短视频，从文案到画面全自动，自媒体创作者的"印钞机"。
+    </div>
+    <div class="card-section-title">核心功能</div>
+    <ul class="features">
+      <li>全自动视频生成：输入主题即可生成文案、配音、字幕和画面</li>
+      <li>多模型集成：支持 GPT、DeepSeek、Ollama 等多种大模型生成文案</li>
+      <li>丰富素材：内置大量视频素材源，支持自定义素材库</li>
+    </ul>
+    <div class="card-section-title">适用场景</div>
+    <div class="tags">
+      <span class="tag">短视频创作</span>
+      <span class="tag">自媒体运营</span>
+      <span class="tag">内容营销</span>
+      <span class="tag">批量视频生产</span>
+    </div>
+  </div>
+
+  <!-- #6 codegraph -->
+  <div class="card">
+    <div class="card-rank">#6</div>
+    <div class="card-header">
+      <div>
+        <a href="https://github.com/colbymchenry/codegraph" target="_blank">colbymchenry/codegraph</a>
+        <span class="card-lang lang-typescript">TypeScript</span>
+      </div>
+      <div class="card-stars">
+        <span class="star-total">★ 43,763</span>
+        <span class="star-week">+8,661 本周</span>
+      </div>
+    </div>
+    <div class="card-desc">
+      <strong>一句话：</strong>为 AI 编程工具构建预索引代码知识图谱，减少 Token 消耗和工具调用次数，100% 本地运行。
+    </div>
+    <div class="card-section-title">核心功能</div>
+    <ul class="features">
+      <li>代码知识图谱：将代码仓库构建为可查询的图结构，AI 可高效检索代码关系</li>
+      <li>多工具支持：适配 Claude Code、Codex、Gemini、Cursor、Hermes Agent 等</li>
+      <li>本地优先：无需云端索引，所有数据本地处理，保护代码隐私</li>
+    </ul>
+    <div class="card-section-title">适用场景</div>
+    <div class="tags">
+      <span class="tag">代码理解</span>
+      <span class="tag">AI 辅助编程</span>
+      <span class="tag">大型项目导航</span>
+      <span class="tag">代码审查</span>
+    </div>
+  </div>
+
+  <!-- #7 Understand-Anything -->
+  <div class="card">
+    <div class="card-rank">#7</div>
+    <div class="card-header">
+      <div>
+        <a href="https://github.com/Lum1104/Understand-Anything" target="_blank">Lum1104/Understand-Anything</a>
+        <span class="card-lang lang-typescript">TypeScript</span>
+      </div>
+      <div class="card-stars">
+        <span class="star-total">★ 54,376</span>
+        <span class="star-week">+7,466 本周</span>
+      </div>
+    </div>
+    <div class="card-desc">
+      <strong>一句话：</strong>将任何代码转化为可交互的知识图谱，支持探索、搜索和自然语言问答，让 AI 真正"理解"代码。
+    </div>
+    <div class="card-section-title">核心功能</div>
+    <ul class="features">
+      <li>交互式知识图谱：将代码结构可视化为可点击、可搜索的图谱</li>
+      <li>自然语言查询：通过对话方式探索代码架构和依赖关系</li>
+      <li>多平台兼容：支持 Claude Code、Codex、Cursor、Copilot、Gemini CLI 等</li>
+    </ul>
+    <div class="card-section-title">适用场景</div>
+    <div class="tags">
+      <span class="tag">代码学习</span>
+      <span class="tag">架构分析</span>
+      <span class="tag">新项目上手</span>
+      <span class="tag">文档生成</span>
+    </div>
+  </div>
+
+  <!-- #8 Taste-Skill -->
+  <div class="card">
+    <div class="card-rank">#8</div>
+    <div class="card-header">
+      <div>
+        <a href="https://github.com/Leonxlnx/taste-skill" target="_blank">Leonxlnx/taste-skill</a>
+        <span class="card-lang lang-shell">Shell</span>
+      </div>
+      <div class="card-stars">
+        <span class="star-total">★ 36,633</span>
+        <span class="star-week">+6,385 本周</span>
+      </div>
+    </div>
+    <div class="card-desc">
+      <strong>一句话：</strong>给 AI 注入"审美品味"的技能模块，让 AI 不再生成千篇一律的平庸内容，告别"AI 腔"。
+    </div>
+    <div class="card-section-title">核心功能</div>
+    <ul class="features">
+      <li>审美校准：通过结构化规则让 AI 理解什么是好的设计和内容</li>
+      <li>反模板化：主动拒绝生成千篇一律的"AI slop"内容</li>
+      <li>轻量集成：Shell 脚本实现，可快速接入各类 AI 工作流</li>
+    </ul>
+    <div class="card-section-title">适用场景</div>
+    <div class="tags">
+      <span class="tag">内容质量提升</span>
+      <span class="tag">UI 设计辅助</span>
+      <span class="tag">创意写作</span>
+      <span class="tag">品牌调性把控</span>
+    </div>
+  </div>
+
+  <!-- #9 hermes-webui -->
+  <div class="card">
+    <div class="card-rank">#9</div>
+    <div class="card-header">
+      <div>
+        <a href="https://github.com/nesquena/hermes-webui" target="_blank">nesquena/hermes-webui</a>
+        <span class="card-lang lang-python">Python</span>
+      </div>
+      <div class="card-stars">
+        <span class="star-total">★ 13,847</span>
+        <span class="star-week">+4,281 本周</span>
+      </div>
+    </div>
+    <div class="card-desc">
+      <strong>一句话：</strong>Hermes Agent 的 Web 前端界面，可在浏览器或手机上与 AI Agent 进行自然交互。
+    </div>
+    <div class="card-section-title">核心功能</div>
+    <ul class="features">
+      <li>响应式 Web UI：支持桌面和移动端，随时随地与 Agent 交互</li>
+      <li>对话式操作：通过自然语言指挥 Agent 执行任务</li>
+      <li>实时反馈：任务执行过程实时可视化展示</li>
+    </ul>
+    <div class="card-section-title">适用场景</div>
+    <div class="tags">
+      <span class="tag">Agent 可视化</span>
+      <span class="tag">移动办公</span>
+      <span class="tag">团队协作</span>
+      <span class="tag">原型演示</span>
+    </div>
+  </div>
+
+  <!-- #10 VoxCPM -->
+  <div class="card">
+    <div class="card-rank">#10</div>
+    <div class="card-header">
+      <div>
+        <a href="https://github.com/OpenBMB/VoxCPM" target="_blank">OpenBMB/VoxCPM</a>
+        <span class="card-lang lang-python">Python</span>
+      </div>
+      <div class="card-stars">
+        <span class="star-total">★ 27,507</span>
+        <span class="star-week">+4,298 本周</span>
+      </div>
+    </div>
+    <div class="card-desc">
+      <strong>一句话：</strong>清华 OpenBMB 推出的无 Tokenizer 多语言 TTS 系统，支持创意语音设计和高保真声音克隆。
+    </div>
+    <div class="card-section-title">核心功能</div>
+    <ul class="features">
+      <li>无 Tokenizer 架构：跳过传统语音分词步骤，生成更自然流畅的语音</li>
+      <li>多语言支持：覆盖主流语言的语音合成与克隆</li>
+      <li>创意语音设计：可自定义音色、语速、情感等参数</li>
+    </ul>
+    <div class="card-section-title">适用场景</div>
+    <div class="tags">
+      <span class="tag">语音合成</span>
+      <span class="tag">声音克隆</span>
+      <span class="tag">有声内容生产</span>
+      <span class="tag">多语言 TTS</span>
+    </div>
+  </div>
+
+  <!-- #11 impeccable -->
+  <div class="card">
+    <div class="card-rank">#11</div>
+    <div class="card-header">
+      <div>
+        <a href="https://github.com/pbakaus/impeccable" target="_blank">pbakaus/impeccable</a>
+        <span class="card-lang lang-javascript">JavaScript</span>
+      </div>
+      <div class="card-stars">
+        <span class="star-total">★ 35,556</span>
+        <span class="star-week">+3,586 本周</span>
+      </div>
+    </div>
+    <div class="card-desc">
+      <strong>一句话：</strong>让 AI 编程工具具备专业设计能力的设计语言系统，涵盖排版、配色、空间、动效等 7 大领域。
+    </div>
+    <div class="card-section-title">核心功能</div>
+    <ul class="features">
+      <li>设计知识库：包含排版、色彩、空间、动效、交互等 7 个领域参考</li>
+      <li>AI 增强：通过 20+ 命令（/audit, /critique, /polish 等）指导 AI 输出</li>
+      <li>反模式库：收集常见 AI 设计缺陷，帮助避免"AI 风格模板化"</li>
+    </ul>
+    <div class="card-section-title">适用场景</div>
+    <div class="tags">
+      <span class="tag">AI 前端设计</span>
+      <span class="tag">UI/UX 开发</span>
+      <span class="tag">设计系统</span>
+      <span class="tag">网页制作</span>
+    </div>
+  </div>
+
+  <!-- #12 supermemory -->
+  <div class="card">
+    <div class="card-rank">#12</div>
+    <div class="card-header">
+      <div>
+        <a href="https://github.com/supermemoryai/supermemory" target="_blank">supermemoryai/supermemory</a>
+        <span class="card-lang lang-typescript">TypeScript</span>
+      </div>
+      <div class="card-stars">
+        <span class="star-total">★ 26,014</span>
+        <span class="star-week">+2,924 本周</span>
+      </div>
+    </div>
+    <div class="card-desc">
+      <strong>一句话：</strong>面向 AI 时代的极速可扩展记忆引擎与 API，为 Agent 和 LLM 应用提供持久化记忆能力。
+    </div>
+    <div class="card-section-title">核心功能</div>
+    <ul class="features">
+      <li>高性能存储：极速向量检索，支持海量记忆数据的实时读写</li>
+      <li>Memory API：提供标准化接口，开发者可快速接入到任何 AI 应用</li>
+      <li>可扩展架构：从个人助手到企业级 Agent 平台均可适配</li>
+    </ul>
+    <div class="card-section-title">适用场景</div>
+    <div class="tags">
+      <span class="tag">Agent 记忆系统</span>
+      <span class="tag">LLM 应用开发</span>
+      <span class="tag">个人知识库</span>
+      <span class="tag">对话上下文管理</span>
+    </div>
+  </div>
+
+  <!-- #13 open-notebook -->
+  <div class="card">
+    <div class="card-rank">#13</div>
+    <div class="card-header">
+      <div>
+        <a href="https://github.com/lfnovo/open-notebook" target="_blank">lfnovo/open-notebook</a>
+        <span class="card-lang lang-typescript">TypeScript</span>
+      </div>
+      <div class="card-stars">
+        <span class="star-total">★ 27,260</span>
+        <span class="star-week">+2,993 本周</span>
+      </div>
+    </div>
+    <div class="card-desc">
+      <strong>一句话：</strong>Google NotebookLM 的开源替代品，功能更灵活，支持自定义数据源和 AI 知识问答。
+    </div>
+    <div class="card-section-title">核心功能</div>
+    <ul class="features">
+      <li>多源知识聚合：支持导入文档、网页、笔记等多种数据源</li>
+      <li>AI 对话：基于导入数据进行自然语言问答和摘要</li>
+      <li>完全开源：可自托管，数据不离开你的设备</li>
+    </ul>
+    <div class="card-section-title">适用场景</div>
+    <div class="tags">
+      <span class="tag">个人知识管理</span>
+      <span class="tag">研究笔记</span>
+      <span class="tag">学习助手</span>
+      <span class="tag">文档问答</span>
+    </div>
+  </div>
+
+  <!-- #14 last30days-skill -->
+  <div class="card">
+    <div class="card-rank">#14</div>
+    <div class="card-header">
+      <div>
+        <a href="https://github.com/mvanhorn/last30days-skill" target="_blank">mvanhorn/last30days-skill</a>
+        <span class="card-lang lang-python">Python</span>
+      </div>
+      <div class="card-stars">
+        <span class="star-total">★ 31,006</span>
+        <span class="star-week">+2,718 本周</span>
+      </div>
+    </div>
+    <div class="card-desc">
+      <strong>一句话：</strong>AI Agent 技能插件——自动检索 Reddit、X、YouTube、HN 等平台过去 30 天的内容，生成可靠的主题摘要。
+    </div>
+    <div class="card-section-title">核心功能</div>
+    <ul class="features">
+      <li>多平台检索：覆盖 Reddit、X、YouTube、Hacker News、Polymarket 等</li>
+      <li>时间过滤：只获取最近 30 天的新鲜内容，确保信息时效性</li>
+      <li>智能摘要：自动综合多源信息，生成结构化、可引用的研究报告</li>
+    </ul>
+    <div class="card-section-title">适用场景</div>
+    <div class="tags">
+      <span class="tag">趋势追踪</span>
+      <span class="tag">舆情监控</span>
+      <span class="tag">竞品调研</span>
+      <span class="tag">AI 研究助手</span>
+    </div>
+  </div>
+
+  <!-- #15 supermemory already listed -->
+  <!-- #16 Agent-Reach -->
+  <div class="card">
+    <div class="card-rank">#15</div>
+    <div class="card-header">
+      <div>
+        <a href="https://github.com/Panniantong/Agent-Reach" target="_blank">Panniantong/Agent-Reach</a>
+        <span class="card-lang lang-python">Python</span>
+      </div>
+      <div class="card-stars">
+        <span class="star-total">★ 23,158</span>
+        <span class="star-week">+2,289 本周</span>
+      </div>
+    </div>
+    <div class="card-desc">
+      <strong>一句话：</strong>给 AI Agent 装上"眼睛"——一条命令即可读取和搜索 Twitter、Reddit、YouTube、B站、小红书等内容，零 API 费用。
+    </div>
+    <div class="card-section-title">核心功能</div>
+    <ul class="features">
+      <li>全网覆盖：支持 Twitter、Reddit、YouTube、GitHub、B站、小红书等平台</li>
+      <li>零成本：无需申请各平台 API Key，直接通过 CLI 抓取</li>
+      <li>统一接口：一条命令访问所有平台，Agent 可直接调用</li>
+    </ul>
+    <div class="card-section-title">适用场景</div>
+    <div class="tags">
+      <span class="tag">社交媒体分析</span>
+      <span class="tag">内容聚合</span>
+      <span class="tag">舆情监控</span>
+      <span class="tag">跨平台研究</span>
+    </div>
+  </div>
+
+  <!-- #17 PaddleOCR -->
+  <div class="card">
+    <div class="card-rank">#16</div>
+    <div class="card-header">
+      <div>
+        <a href="https://github.com/PaddlePaddle/PaddleOCR" target="_blank">PaddlePaddle/PaddleOCR</a>
+        <span class="card-lang lang-python">Python</span>
+      </div>
+      <div class="card-stars">
+        <span class="star-total">★ 81,279</span>
+        <span class="star-week">+2,137 本周</span>
+      </div>
+    </div>
+    <div class="card-desc">
+      <strong>一句话：</strong>百度飞桨出品的轻量级 OCR 工具箱，将 PDF/图片文档转化为结构化数据，支持 100+ 语言，为 AI 大模型搭建图文桥梁。
+    </div>
+    <div class="card-section-title">核心功能</div>
+    <ul class="features">
+      <li>全场景 OCR：文字识别、版面分析、表格识别、公式识别一站式解决</li>
+      <li>100+ 语言：覆盖中英日韩及全球主流语言</li>
+      <li>LLM Pipeline：输出结构化数据可直接用于大模型的 RAG 或理解任务</li>
+    </ul>
+    <div class="card-section-title">适用场景</div>
+    <div class="tags">
+      <span class="tag">文档数字化</span>
+      <span class="tag">票据识别</span>
+      <span class="tag">AI 数据处理</span>
+      <span class="tag">多语言 OCR</span>
+    </div>
+  </div>
+
+  <!-- #18 oh-my-pi -->
+  <div class="card">
+    <div class="card-rank">#17</div>
+    <div class="card-header">
+      <div>
+        <a href="https://github.com/can1357/oh-my-pi" target="_blank">can1357/oh-my-pi</a>
+        <span class="card-lang lang-typescript">TypeScript</span>
+      </div>
+      <div class="card-stars">
+        <span class="star-total">★ 11,094</span>
+        <span class="star-week">+2,117 本周</span>
+      </div>
+    </div>
+    <div class="card-desc">
+      <strong>一句话：</strong>终端 AI 编程助手，支持哈希锚定编辑、LSP 集成、Python/浏览器/子 Agent 协作，为开发者打造极致的命令行 AI 体验。
+    </div>
+    <div class="card-section-title">核心功能</div>
+    <ul class="features">
+      <li>哈希锚定编辑：通过文件哈希精确定位代码变更位置，编辑更可靠</li>
+      <li>多工具集成：内置 LSP、Python 解释器、浏览器、子 Agent 等能力</li>
+      <li>优化工具链：专为终端场景优化的工具调用框架</li>
+    </ul>
+    <div class="card-section-title">适用场景</div>
+    <div class="tags">
+      <span class="tag">终端编程</span>
+      <span class="tag">代码重构</span>
+      <span class="tag">开发者工具</span>
+      <span class="tag">本地 AI 开发</span>
+    </div>
+  </div>
+
+  <!-- #19 heretic -->
+  <div class="card">
+    <div class="card-rank">#18</div>
+    <div class="card-header">
+      <div>
+        <a href="https://github.com/p-e-w/heretic" target="_blank">p-e-w/heretic</a>
+        <span class="card-lang lang-python">Python</span>
+      </div>
+      <div class="card-stars">
+        <span class="star-total">★ 23,921</span>
+        <span class="star-week">+1,273 本周</span>
+      </div>
+    </div>
+    <div class="card-desc">
+      <strong>一句话：</strong>全自动去除语言模型中的内容审查限制，让开源 LLM 恢复"自由意志"。
+    </div>
+    <div class="card-section-title">核心功能</div>
+    <ul class="features">
+      <li>自动化审查移除：无需手动编辑权重，一键处理</li>
+      <li>广泛兼容：支持主流开源语言模型</li>
+      <li>研究用途：为 AI 安全研究和模型行为分析提供工具</li>
+    </ul>
+    <div class="card-section-title">适用场景</div>
+    <div class="tags">
+      <span class="tag">AI 研究</span>
+      <span class="tag">模型安全</span>
+      <span class="tag">开源模型</span>
+      <span class="tag">行为分析</span>
+    </div>
+  </div>
+
+  <!-- #20 Open-LLM-VTuber -->
+  <div class="card">
+    <div class="card-rank">#19</div>
+    <div class="card-header">
+      <div>
+        <a href="https://github.com/Open-LLM-VTuber/Open-LLM-VTuber" target="_blank">Open-LLM-VTuber/Open-LLM-VTuber</a>
+        <span class="card-lang lang-python">Python</span>
+      </div>
+      <div class="card-stars">
+        <span class="star-total">★ 10,353</span>
+        <span class="star-week">+2,388 本周</span>
+      </div>
+    </div>
+    <div class="card-desc">
+      <strong>一句话：</strong>与任意 LLM 进行免手语音对话，支持语音打断和 Live2D 虚拟形象，全平台本地运行。
+    </div>
+    <div class="card-section-title">核心功能</div>
+    <ul class="features">
+      <li>语音交互：免手操作，支持实时语音对话和语音打断</li>
+      <li>Live2D 形象：为 AI 附带虚拟形象，对话体验更生动</li>
+      <li>本地运行：全平台本地部署，隐私安全可控</li>
+    </ul>
+    <div class="card-section-title">适用场景</div>
+    <div class="tags">
+      <span class="tag">语音助手</span>
+      <span class="tag">虚拟形象</span>
+      <span class="tag">VTuber</span>
+      <span class="tag">本地 AI 交互</span>
+    </div>
+  </div>
+
+  <!-- #21 OpenMontage -->
+  <div class="card">
+    <div class="card-rank">#20</div>
+    <div class="card-header">
+      <div>
+        <a href="https://github.com/calesthio/OpenMontage" target="_blank">calesthio/OpenMontage</a>
+        <span class="card-lang lang-python">Python</span>
+      </div>
+      <div class="card-stars">
+        <span class="star-total">★ 4,490</span>
+        <span class="star-week">+319 本周</span>
+      </div>
+    </div>
+    <div class="card-desc">
+      <strong>一句话：</strong>全球首个开源 Agentic 视频制作系统，12 条管线、52 个工具、500+ Agent 技能，将 AI 编程助手变成视频制作工作室。
+    </div>
+    <div class="card-section-title">核心功能</div>
+    <ul class="features">
+      <li>全链路视频生产：从脚本、分镜到剪辑、配音的完整工作流</li>
+      <li>Agent 驱动：每个环节由专业化 Agent 负责，协作完成视频制作</li>
+      <li>500+ 技能库：内置大量视频制作相关的 Agent 技能</li>
+    </ul>
+    <div class="card-section-title">适用场景</div>
+    <div class="tags">
+      <span class="tag">AI 视频制作</span>
+      <span class="tag">内容创作</span>
+      <span class="tag">自动化剪辑</span>
+      <span class="tag">创意视频</span>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>数据来源：<a href="https://github.com/trending" target="_blank">GitHub Trending</a> · 仅展示 AI / ML / Agent 相关项目</p>
+    <p style="margin-top:6px;">Generated by 小鸟游星野 🌙 · 2026-06-08</p>
+  </footer>
+</div>
+</body>
+</html>
