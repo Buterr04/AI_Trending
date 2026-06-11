@@ -3,234 +3,154 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GitHub AI/ML 周报 - 2026年06月09日</title>
+<title>GitHub AI/ML 周报</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", "PingFang SC", sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     color: #1a1a2e;
-    line-height: 1.6;
 }
 .container {
-    max-width: 1100px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 30px 20px 60px;
+    padding: 40px 20px 60px;
 }
 header {
     text-align: center;
-    padding: 40px 20px 30px;
+    padding: 60px 20px 40px;
     color: #fff;
 }
 header h1 {
-    font-size: 2.4em;
+    font-size: 2.6em;
     font-weight: 800;
     text-shadow: 0 2px 10px rgba(0,0,0,0.15);
-    margin-bottom: 8px;
-    letter-spacing: -0.5px;
+    margin-bottom: 10px;
 }
 header .subtitle {
     font-size: 1.1em;
-    opacity: 0.92;
-    font-weight: 400;
+    opacity: 0.88;
+    margin-bottom: 6px;
 }
-header .meta {
-    margin-top: 14px;
-    font-size: 0.88em;
-    opacity: 0.78;
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    flex-wrap: wrap;
+header .desc {
+    font-size: 0.92em;
+    opacity: 0.7;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
 }
-.stats-bar {
-    display: flex;
-    justify-content: center;
-    gap: 28px;
-    margin: 24px 0 32px;
-    flex-wrap: wrap;
-}
-.stat-item {
-    background: rgba(255,255,255,0.18);
-    backdrop-filter: blur(10px);
-    border-radius: 14px;
-    padding: 14px 28px;
-    text-align: center;
-    color: #fff;
-    min-width: 130px;
-    border: 1px solid rgba(255,255,255,0.2);
-}
-.stat-item .num {
-    font-size: 1.9em;
-    font-weight: 800;
+.latest {
+    background: rgba(255,255,255,0.95);
+    border-radius: 18px;
+    padding: 28px 32px;
+    margin: 32px 0 28px;
+    box-shadow: 0 6px 28px rgba(0,0,0,0.08);
+    border: 1px solid rgba(255,255,255,0.6);
+    text-decoration: none;
+    color: inherit;
     display: block;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
-.stat-item .label {
-    font-size: 0.82em;
-    opacity: 0.85;
-    margin-top: 2px;
+.latest:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 36px rgba(0,0,0,0.14);
 }
-.cards {
+.latest-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    color: #fff;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.78em;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+.latest h2 {
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.latest .meta {
+    font-size: 0.88em;
+    color: #888;
+}
+.latest .enter {
+    display: inline-block;
+    margin-top: 14px;
+    color: #667eea;
+    font-weight: 600;
+    font-size: 0.95em;
+}
+.latest .enter::after {
+    content: ' →';
+}
+.section-title {
+    color: rgba(255,255,255,0.85);
+    font-size: 1em;
+    font-weight: 600;
+    margin-bottom: 14px;
+    padding-left: 4px;
+}
+.history {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 10px;
 }
-.card {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 16px;
-    padding: 24px 28px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-    transition: transform 0.2s, box-shadow 0.2s;
-    border: 1px solid rgba(255,255,255,0.6);
-    position: relative;
-    overflow: hidden;
-}
-.card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-}
-.card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 5px;
-    height: 100%;
-    border-radius: 16px 0 0 16px;
-}
-.card-header {
+.history-item {
+    background: rgba(255,255,255,0.9);
+    border-radius: 14px;
+    padding: 16px 22px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 12px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+    border: 1px solid rgba(255,255,255,0.5);
+    text-decoration: none;
+    color: inherit;
 }
-.card-title {
+.history-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px rgba(0,0,0,0.1);
+}
+.history-left {
     display: flex;
     align-items: center;
     gap: 12px;
 }
-.card-title a {
-    font-size: 1.2em;
-    font-weight: 700;
-    color: #1a1a2e;
-    text-decoration: none;
-}
-.card-title a:hover {
-    text-decoration: underline;
-    color: #667eea;
-}
-.card-title .author {
-    font-size: 0.85em;
-    color: #888;
-    font-weight: 400;
-}
-.card-badges {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 0.78em;
-    font-weight: 600;
-    white-space: nowrap;
-}
-.badge-lang {
-    color: #fff;
-}
-.badge-stars {
-    background: #fff3cd;
-    color: #856404;
-    border: 1px solid #ffc107;
-}
-.badge-weekly {
-    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-    color: #fff;
-    font-size: 0.72em;
-}
-.card-summary {
-    font-size: 1.05em;
-    color: #333;
-    margin-bottom: 14px;
-    font-weight: 500;
-    line-height: 1.5;
-}
-.card-section {
-    margin-bottom: 10px;
-}
-.card-section h4 {
+.history-date {
     font-size: 0.82em;
-    color: #999;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 6px;
+    color: #667eea;
+    font-weight: 700;
+    background: #667eea12;
+    padding: 5px 12px;
+    border-radius: 16px;
+}
+.history-label {
+    font-size: 0.95em;
+    color: #444;
+    font-weight: 500;
+}
+.history-arrow {
+    color: #667eea;
     font-weight: 600;
-}
-.card-features {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-}
-.feature-item {
     font-size: 0.88em;
-    color: #555;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-.feature-item::before {
-    content: '✦';
-    color: #667eea;
-    font-size: 0.9em;
-}
-.tags {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-}
-.tag {
-    background: linear-gradient(135deg, #667eea15, #764ba215);
-    color: #667eea;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.78em;
-    font-weight: 600;
-    border: 1px solid #667eea25;
 }
 footer {
     text-align: center;
-    padding: 40px 20px 30px;
-    color: rgba(255,255,255,0.7);
-    font-size: 0.85em;
+    padding: 40px 20px 20px;
+    color: rgba(255,255,255,0.55);
+    font-size: 0.82em;
 }
 footer a {
-    color: rgba(255,255,255,0.9);
+    color: rgba(255,255,255,0.8);
     text-decoration: underline;
 }
-.rank {
-    position: absolute;
-    top: 12px;
-    right: 16px;
-    font-size: 2em;
-    font-weight: 900;
-    color: rgba(0,0,0,0.04);
-    pointer-events: none;
-}
-@media (max-width: 640px) {
-    header h1 { font-size: 1.6em; }
-    .card { padding: 18px 16px; }
-    .card-header { flex-direction: column; align-items: flex-start; }
-    .card-features { flex-direction: column; gap: 6px; }
-    .stats-bar { gap: 12px; }
-    .stat-item { min-width: 100px; padding: 10px 16px; }
+@media (max-width: 600px) {
+    header h1 { font-size: 1.8em; }
+    .latest { padding: 20px 18px; }
+    .history-item { flex-direction: column; gap: 8px; align-items: flex-start; }
 }
 </style>
 </head>
@@ -238,643 +158,43 @@ footer a {
 
 <header>
   <h1>🔬 GitHub AI/ML 周报</h1>
-  <div class="subtitle">本周热门 AI/机器学习开源项目精选</div>
-  <div class="meta">
-    <span>📅 数据抓取时间：2026-06-09 21:36</span>
-    <span>📊 共收录 25 个项目</span>
-    <span>🔥 按 Star 数降序排列</span>
-  </div>
+  <div class="subtitle">每周精选热门 AI/机器学习开源项目</div>
+  <div class="desc">自动抓取 GitHub Trending，筛选 AI/ML 领域热门项目，生成中文可视化报告</div>
 </header>
 
 <div class="container">
 
-<div class="stats-bar">
-  <div class="stat-item">
-    <span class="num">25</span>
-    <span class="label">收录项目</span>
-  </div>
-  <div class="stat-item">
-    <span class="num">2,342,702</span>
-    <span class="label">总 Star 数</span>
-  </div>
-  <div class="stat-item">
-    <span class="num">6</span>
-    <span class="label">编程语言</span>
-  </div>
-  <div class="stat-item">
-    <span class="num">500+</span>
-    <span class="label">最低 Star 数</span>
-  </div>
-</div>
+  <a class="latest" href="archive/2026-06-09.html">
+    <span class="latest-badge">📌 最新一期</span>
+    <h2>AI/ML 周报 2026-06-09</h2>
+    <div class="meta">📅 2026年06月09日 · 📊 收录 25 个项目</div>
+    <span class="enter">查看完整报告</span>
+  </a>
 
-<div class="cards">
+  <div class="section-title">📚 历史周报</div>
+  <div class="history">
 
-  <div class="card" style="--accent: #89e051">
-    <div style="position:absolute;top:0;left:0;width:5px;height:100%;background:#89e051;border-radius:16px 0 0 16px;"></div>
-    <span class="rank">#1</span>
-    <div class="card-header">
-      <div class="card-title">
-        <a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">obra/superpowers</a>
+    <a class="history-item" href="archive/2026-06-08.html">
+      <div class="history-left">
+        <span class="history-date">2026-06-08</span>
+        <span class="history-label">AI/ML 周报</span>
       </div>
-      <div class="card-badges">
-        <span class="badge badge-lang" style="background:#89e051">🐚 Shell</span>
-        <span class="badge badge-stars">⭐ 222,086</span>
-        
+      <span class="history-arrow">查看 →</span>
+    </a>
+
+    <a class="history-item" href="archive/2026-06-02.html">
+      <div class="history-left">
+        <span class="history-date">2026-06-02</span>
+        <span class="history-label">AI/ML 周报</span>
       </div>
-    </div>
-    <div class="card-summary">一个强大的 AI 技能框架和软件开发方法论</div>
-    <div class="card-section">
-      <h4>✨ 核心功能</h4>
-      <div class="card-features"><span class="feature-item">Agentic 技能开发框架</span><span class="feature-item">系统化的软件开发方法论</span><span class="feature-item">支持多种 AI 模型集成</span></div>
-    </div>
-    <div class="card-section">
-      <h4>🏷️ 适用场景</h4>
-      <div class="tags"><span class="tag">Agent框架</span><span class="tag">开发工具</span><span class="tag">系统架构</span></div>
-    </div>
+      <span class="history-arrow">查看 →</span>
+    </a>
+
   </div>
-
-  <div class="card" style="--accent: #f1e05a">
-    <div style="position:absolute;top:0;left:0;width:5px;height:100%;background:#f1e05a;border-radius:16px 0 0 16px;"></div>
-    <span class="rank">#2</span>
-    <div class="card-header">
-      <div class="card-title">
-        <a href="https://github.com/affaan-m/ECC" target="_blank" rel="noopener">affaan-m/ECC</a>
-      </div>
-      <div class="card-badges">
-        <span class="badge badge-lang" style="background:#f1e05a">⚡ JavaScript</span>
-        <span class="badge badge-stars">⭐ 211,517</span>
-        <span class="badge badge-weekly">📈 +9,301 本周</span>
-      </div>
-    </div>
-    <div class="card-summary">AI Agent 性能优化系统，让 Claude Code、Codex 等更强</div>
-    <div class="card-section">
-      <h4>✨ 核心功能</h4>
-      <div class="card-features"><span class="feature-item">Agent 性能调优与优化</span><span class="feature-item">技能、直觉、记忆系统管理</span><span class="feature-item">研究优先的开发范式</span></div>
-    </div>
-    <div class="card-section">
-      <h4>🏷️ 适用场景</h4>
-      <div class="tags"><span class="tag">Agent优化</span><span class="tag">开发工具</span><span class="tag">性能调优</span></div>
-    </div>
-  </div>
-
-  <div class="card" style="--accent: #3572A5">
-    <div style="position:absolute;top:0;left:0;width:5px;height:100%;background:#3572A5;border-radius:16px 0 0 16px;"></div>
-    <span class="rank">#3</span>
-    <div class="card-header">
-      <div class="card-title">
-        <a href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="noopener">NousResearch/hermes-agent</a>
-      </div>
-      <div class="card-badges">
-        <span class="badge badge-lang" style="background:#3572A5">🐍 Python</span>
-        <span class="badge badge-stars">⭐ 188,338</span>
-        <span class="badge badge-weekly">📈 +11,747 本周</span>
-      </div>
-    </div>
-    <div class="card-summary">会成长的 AI Agent，随使用不断进化</div>
-    <div class="card-section">
-      <h4>✨ 核心功能</h4>
-      <div class="card-features"><span class="feature-item">自适应学习能力</span><span class="feature-item">可扩展的 Agent 架构</span><span class="feature-item">开源社区驱动</span></div>
-    </div>
-    <div class="card-section">
-      <h4>🏷️ 适用场景</h4>
-      <div class="tags"><span class="tag">AI Agent</span><span class="tag">自适应系统</span><span class="tag">开源</span></div>
-    </div>
-  </div>
-
-  <div class="card" style="--accent: #3572A5">
-    <div style="position:absolute;top:0;left:0;width:5px;height:100%;background:#3572A5;border-radius:16px 0 0 16px;"></div>
-    <span class="rank">#4</span>
-    <div class="card-header">
-      <div class="card-title">
-        <a href="https://github.com/microsoft/markitdown" target="_blank" rel="noopener">microsoft/markitdown</a>
-      </div>
-      <div class="card-badges">
-        <span class="badge badge-lang" style="background:#3572A5">🐍 Python</span>
-        <span class="badge badge-stars">⭐ 149,029</span>
-        <span class="badge badge-weekly">📈 +11,177 本周</span>
-      </div>
-    </div>
-    <div class="card-summary">微软出品，将任意文件转换为 Markdown 格式</div>
-    <div class="card-section">
-      <h4>✨ 核心功能</h4>
-      <div class="card-features"><span class="feature-item">支持 Office 文档转换</span><span class="feature-item">PDF、图片等多格式支持</span><span class="feature-item">简洁的 Python API</span></div>
-    </div>
-    <div class="card-section">
-      <h4>🏷️ 适用场景</h4>
-      <div class="tags"><span class="tag">文档处理</span><span class="tag">格式转换</span><span class="tag">数据处理</span></div>
-    </div>
-  </div>
-
-  <div class="card" style="--accent: #3178c6">
-    <div style="position:absolute;top:0;left:0;width:5px;height:100%;background:#3178c6;border-radius:16px 0 0 16px;"></div>
-    <span class="rank">#5</span>
-    <div class="card-header">
-      <div class="card-title">
-        <a href="https://github.com/langgenius/dify" target="_blank" rel="noopener">langgenius/dify</a>
-      </div>
-      <div class="card-badges">
-        <span class="badge badge-lang" style="background:#3178c6">📘 TypeScript</span>
-        <span class="badge badge-stars">⭐ 144,554</span>
-        
-      </div>
-    </div>
-    <div class="card-summary">生产级 Agentic 工作流开发平台</div>
-    <div class="card-section">
-      <h4>✨ 核心功能</h4>
-      <div class="card-features"><span class="feature-item">可视化工作流编排</span><span class="feature-item">内置 RAG 引擎</span><span class="feature-item">多模型支持与部署</span></div>
-    </div>
-    <div class="card-section">
-      <h4>🏷️ 适用场景</h4>
-      <div class="tags"><span class="tag">低代码</span><span class="tag">工作流</span><span class="tag">企业级</span></div>
-    </div>
-  </div>
-
-  <div class="card" style="--accent: #3572A5">
-    <div style="position:absolute;top:0;left:0;width:5px;height:100%;background:#3572A5;border-radius:16px 0 0 16px;"></div>
-    <span class="rank">#6</span>
-    <div class="card-header">
-      <div class="card-title">
-        <a href="https://github.com/open-webui/open-webui" target="_blank" rel="noopener">open-webui/open-webui</a>
-      </div>
-      <div class="card-badges">
-        <span class="badge badge-lang" style="background:#3572A5">🐍 Python</span>
-        <span class="badge badge-stars">⭐ 140,792</span>
-        
-      </div>
-    </div>
-    <div class="card-summary">用户友好的 AI 对话界面，支持 Ollama 和 OpenAI</div>
-    <div class="card-section">
-      <h4>✨ 核心功能</h4>
-      <div class="card-features"><span class="feature-item">直观的聊天界面</span><span class="feature-item">本地模型支持 (Ollama)</span><span class="feature-item">OpenAI API 兼容</span></div>
-    </div>
-    <div class="card-section">
-      <h4>🏷️ 适用场景</h4>
-      <div class="tags"><span class="tag">UI界面</span><span class="tag">本地AI</span><span class="tag">聊天助手</span></div>
-    </div>
-  </div>
-
-  <div class="card" style="--accent: #3178c6">
-    <div style="position:absolute;top:0;left:0;width:5px;height:100%;background:#3178c6;border-radius:16px 0 0 16px;"></div>
-    <span class="rank">#7</span>
-    <div class="card-header">
-      <div class="card-title">
-        <a href="https://github.com/firecrawl/firecrawl" target="_blank" rel="noopener">firecrawl/firecrawl</a>
-      </div>
-      <div class="card-badges">
-        <span class="badge badge-lang" style="background:#3178c6">📘 TypeScript</span>
-        <span class="badge badge-stars">⭐ 130,564</span>
-        
-      </div>
-    </div>
-    <div class="card-summary">规模化搜索、抓取和交互 Web 的 API</div>
-    <div class="card-section">
-      <h4>✨ 核心功能</h4>
-      <div class="card-features"><span class="feature-item">智能网页抓取</span><span class="feature-item">搜索引擎集成</span><span class="feature-item">结构化数据提取</span></div>
-    </div>
-    <div class="card-section">
-      <h4>🏷️ 适用场景</h4>
-      <div class="tags"><span class="tag">Web抓取</span><span class="tag">数据采集</span><span class="tag">API服务</span></div>
-    </div>
-  </div>
-
-  <div class="card" style="--accent: #3572A5">
-    <div style="position:absolute;top:0;left:0;width:5px;height:100%;background:#3572A5;border-radius:16px 0 0 16px;"></div>
-    <span class="rank">#8</span>
-    <div class="card-header">
-      <div class="card-title">
-        <a href="https://github.com/Shubhamsaboo/awesome-llm-apps" target="_blank" rel="noopener">Shubhamsaboo/awesome-llm-apps</a>
-      </div>
-      <div class="card-badges">
-        <span class="badge badge-lang" style="background:#3572A5">🐍 Python</span>
-        <span class="badge badge-stars">⭐ 114,012</span>
-        
-      </div>
-    </div>
-    <div class="card-summary">100+ 个可以直接运行的 AI Agent 和 RAG 应用</div>
-    <div class="card-section">
-      <h4>✨ 核心功能</h4>
-      <div class="card-features"><span class="feature-item">丰富的应用模板</span><span class="feature-item">开箱即用的 RAG 示例</span><span class="feature-item">可定制和部署</span></div>
-    </div>
-    <div class="card-section">
-      <h4>🏷️ 适用场景</h4>
-      <div class="tags"><span class="tag">应用集合</span><span class="tag">RAG</span><span class="tag">实战教程</span></div>
-    </div>
-  </div>
-
-  <div class="card" style="--accent: #3572A5">
-    <div style="position:absolute;top:0;left:0;width:5px;height:100%;background:#3572A5;border-radius:16px 0 0 16px;"></div>
-    <span class="rank">#9</span>
-    <div class="card-header">
-      <div class="card-title">
-        <a href="https://github.com/browser-use/browser-use" target="_blank" rel="noopener">browser-use/browser-use</a>
-      </div>
-      <div class="card-badges">
-        <span class="badge badge-lang" style="background:#3572A5">🐍 Python</span>
-        <span class="badge badge-stars">⭐ 97,919</span>
-        
-      </div>
-    </div>
-    <div class="card-summary">让 AI Agent 能够操控浏览器的开源工具</div>
-    <div class="card-section">
-      <h4>✨ 核心功能</h4>
-      <div class="card-features"><span class="feature-item">浏览器自动化控制</span><span class="feature-item">AI 任务在线执行</span><span class="feature-item">跨平台支持</span></div>
-    </div>
-    <div class="card-section">
-      <h4>🏷️ 适用场景</h4>
-      <div class="tags"><span class="tag">浏览器自动化</span><span class="tag">Agent工具</span><span class="tag">任务自动化</span></div>
-    </div>
-  </div>
-
-  <div class="card" style="--accent: #DA5B0B">
-    <div style="position:absolute;top:0;left:0;width:5px;height:100%;background:#DA5B0B;border-radius:16px 0 0 16px;"></div>
-    <span class="rank">#10</span>
-    <div class="card-header">
-      <div class="card-title">
-        <a href="https://github.com/rasbt/LLMs-from-scratch" target="_blank" rel="noopener">rasbt/LLMs-from-scratch</a>
-      </div>
-      <div class="card-badges">
-        <span class="badge badge-lang" style="background:#DA5B0B">📓 Jupyter Notebook</span>
-        <span class="badge badge-stars">⭐ 96,907</span>
-        
-      </div>
-    </div>
-    <div class="card-summary">从零开始用 PyTorch 实现 ChatGPT 级别的 LLM</div>
-    <div class="card-section">
-      <h4>✨ 核心功能</h4>
-      <div class="card-features"><span class="feature-item">完整的 LLM 构建教程</span><span class="feature-item">PyTorch 实现详解</span><span class="feature-item">Step-by-step 教学</span></div>
-    </div>
-    <div class="card-section">
-      <h4>🏷️ 适用场景</h4>
-      <div class="tags"><span class="tag">教育学习</span><span class="tag">LLM原理</span><span class="tag">深度学习</span></div>
-    </div>
-  </div>
-
-  <div class="card" style="--accent: #3572A5">
-    <div style="position:absolute;top:0;left:0;width:5px;height:100%;background:#3572A5;border-radius:16px 0 0 16px;"></div>
-    <span class="rank">#11</span>
-    <div class="card-header">
-      <div class="card-title">
-        <a href="https://github.com/infiniflow/ragflow" target="_blank" rel="noopener">infiniflow/ragflow</a>
-      </div>
-      <div class="card-badges">
-        <span class="badge badge-lang" style="background:#3572A5">🐍 Python</span>
-        <span class="badge badge-stars">⭐ 82,298</span>
-        
-      </div>
-    </div>
-    <div class="card-summary">领先的企业级 RAG 引擎</div>
-    <div class="card-section">
-      <h4>✨ 核心功能</h4>
-      <div class="card-features"><span class="feature-item">深度文档理解</span><span class="feature-item">多模态检索增强</span><span class="feature-item">可扩展的企业架构</span></div>
-    </div>
-    <div class="card-section">
-      <h4>🏷️ 适用场景</h4>
-      <div class="tags"><span class="tag">RAG引擎</span><span class="tag">企业级</span><span class="tag">文档理解</span></div>
-    </div>
-  </div>
-
-  <div class="card" style="--accent: #3572A5">
-    <div style="position:absolute;top:0;left:0;width:5px;height:100%;background:#3572A5;border-radius:16px 0 0 16px;"></div>
-    <span class="rank">#12</span>
-    <div class="card-header">
-      <div class="card-title">
-        <a href="https://github.com/OpenHands/OpenHands" target="_blank" rel="noopener">OpenHands/OpenHands</a>
-      </div>
-      <div class="card-badges">
-        <span class="badge badge-lang" style="background:#3572A5">🐍 Python</span>
-        <span class="badge badge-stars">⭐ 76,304</span>
-        
-      </div>
-    </div>
-    <div class="card-summary">AI 驱动的自动编程平台</div>
-    <div class="card-section">
-      <h4>✨ 核心功能</h4>
-      <div class="card-features"><span class="feature-item">AI 自动编码</span><span class="feature-item">多语言支持</span><span class="feature-item">代码审查与生成</span></div>
-    </div>
-    <div class="card-section">
-      <h4>🏷️ 适用场景</h4>
-      <div class="tags"><span class="tag">AI编程</span><span class="tag">代码生成</span><span class="tag">开发助手</span></div>
-    </div>
-  </div>
-
-  <div class="card" style="--accent: #3572A5">
-    <div style="position:absolute;top:0;left:0;width:5px;height:100%;background:#3572A5;border-radius:16px 0 0 16px;"></div>
-    <span class="rank">#13</span>
-    <div class="card-header">
-      <div class="card-title">
-        <a href="https://github.com/hiyouga/LlamaFactory" target="_blank" rel="noopener">hiyouga/LlamaFactory</a>
-      </div>
-      <div class="card-badges">
-        <span class="badge badge-lang" style="background:#3572A5">🐍 Python</span>
-        <span class="badge badge-stars">⭐ 72,029</span>
-        
-      </div>
-    </div>
-    <div class="card-summary">高效微调 100+ 种 LLM 和 VLM 的统一框架 (ACL 2024)</div>
-    <div class="card-section">
-      <h4>✨ 核心功能</h4>
-      <div class="card-features"><span class="feature-item">100+ 模型微调支持</span><span class="feature-item">高效训练策略</span><span class="feature-item">学术论文加持</span></div>
-    </div>
-    <div class="card-section">
-      <h4>🏷️ 适用场景</h4>
-      <div class="tags"><span class="tag">模型微调</span><span class="tag">训练框架</span><span class="tag">学术研究</span></div>
-    </div>
-  </div>
-
-  <div class="card" style="--accent: #3572A5">
-    <div style="position:absolute;top:0;left:0;width:5px;height:100%;background:#3572A5;border-radius:16px 0 0 16px;"></div>
-    <span class="rank">#14</span>
-    <div class="card-header">
-      <div class="card-title">
-        <a href="https://github.com/bytedance/deer-flow" target="_blank" rel="noopener">bytedance/deer-flow</a>
-      </div>
-      <div class="card-badges">
-        <span class="badge badge-lang" style="background:#3572A5">🐍 Python</span>
-        <span class="badge badge-stars">⭐ 70,813</span>
-        
-      </div>
-    </div>
-    <div class="card-summary">字节跳动开源的长期超级 Agent 框架</div>
-    <div class="card-section">
-      <h4>✨ 核心功能</h4>
-      <div class="card-features"><span class="feature-item">长周期任务处理</span><span class="feature-item">研究与编码协作</span><span class="feature-item">多技能集成</span></div>
-    </div>
-    <div class="card-section">
-      <h4>🏷️ 适用场景</h4>
-      <div class="tags"><span class="tag">Agent框架</span><span class="tag">字节跳动</span><span class="tag">自动化</span></div>
-    </div>
-  </div>
-
-  <div class="card" style="--accent: #3572A5">
-    <div style="position:absolute;top:0;left:0;width:5px;height:100%;background:#3572A5;border-radius:16px 0 0 16px;"></div>
-    <span class="rank">#15</span>
-    <div class="card-header">
-      <div class="card-title">
-        <a href="https://github.com/unclecode/crawl4ai" target="_blank" rel="noopener">unclecode/crawl4ai</a>
-      </div>
-      <div class="card-badges">
-        <span class="badge badge-lang" style="background:#3572A5">🐍 Python</span>
-        <span class="badge badge-stars">⭐ 68,125</span>
-        
-      </div>
-    </div>
-    <div class="card-summary">LLM 友好的开源网页爬虫</div>
-    <div class="card-section">
-      <h4>✨ 核心功能</h4>
-      <div class="card-features"><span class="feature-item">AI 优化的爬取策略</span><span class="feature-item">结构化数据输出</span><span class="feature-item">高并发支持</span></div>
-    </div>
-    <div class="card-section">
-      <h4>🏷️ 适用场景</h4>
-      <div class="tags"><span class="tag">Web爬虫</span><span class="tag">数据采集</span><span class="tag">LLM集成</span></div>
-    </div>
-  </div>
-
-  <div class="card" style="--accent: #3178c6">
-    <div style="position:absolute;top:0;left:0;width:5px;height:100%;background:#3178c6;border-radius:16px 0 0 16px;"></div>
-    <span class="rank">#16</span>
-    <div class="card-header">
-      <div class="card-title">
-        <a href="https://github.com/earendil-works/pi" target="_blank" rel="noopener">earendil-works/pi</a>
-      </div>
-      <div class="card-badges">
-        <span class="badge badge-lang" style="background:#3178c6">📘 TypeScript</span>
-        <span class="badge badge-stars">⭐ 61,156</span>
-        
-      </div>
-    </div>
-    <div class="card-summary">统一的 AI Agent 工具包：LLM API、Agent 循环、CLI</div>
-    <div class="card-section">
-      <h4>✨ 核心功能</h4>
-      <div class="card-features"><span class="feature-item">统一 LLM API 接口</span><span class="feature-item">Agent 循环引擎</span><span class="feature-item">终端 TUI 界面</span></div>
-    </div>
-    <div class="card-section">
-      <h4>🏷️ 适用场景</h4>
-      <div class="tags"><span class="tag">Agent工具包</span><span class="tag">CLI工具</span><span class="tag">开发框架</span></div>
-    </div>
-  </div>
-
-  <div class="card" style="--accent: #dea584">
-    <div style="position:absolute;top:0;left:0;width:5px;height:100%;background:#dea584;border-radius:16px 0 0 16px;"></div>
-    <span class="rank">#17</span>
-    <div class="card-header">
-      <div class="card-title">
-        <a href="https://github.com/rtk-ai/rtk" target="_blank" rel="noopener">rtk-ai/rtk</a>
-      </div>
-      <div class="card-badges">
-        <span class="badge badge-lang" style="background:#dea584">🦀 Rust</span>
-        <span class="badge badge-stars">⭐ 60,433</span>
-        
-      </div>
-    </div>
-    <div class="card-summary">CLI 代理，减少 60-90% 的 LLM Token 消耗</div>
-    <div class="card-section">
-      <h4>✨ 核心功能</h4>
-      <div class="card-features"><span class="feature-item">大幅降低 Token 成本</span><span class="feature-item">智能命令压缩</span><span class="feature-item">透明代理模式</span></div>
-    </div>
-    <div class="card-section">
-      <h4>🏷️ 适用场景</h4>
-      <div class="tags"><span class="tag">成本优化</span><span class="tag">CLI工具</span><span class="tag">Token压缩</span></div>
-    </div>
-  </div>
-
-  <div class="card" style="--accent: #DA5B0B">
-    <div style="position:absolute;top:0;left:0;width:5px;height:100%;background:#DA5B0B;border-radius:16px 0 0 16px;"></div>
-    <span class="rank">#18</span>
-    <div class="card-header">
-      <div class="card-title">
-        <a href="https://github.com/pathwaycom/llm-app" target="_blank" rel="noopener">pathwaycom/llm-app</a>
-      </div>
-      <div class="card-badges">
-        <span class="badge badge-lang" style="background:#DA5B0B">📓 Jupyter Notebook</span>
-        <span class="badge badge-stars">⭐ 59,385</span>
-        
-      </div>
-    </div>
-    <div class="card-summary">即开即用的 RAG 和 AI 管道云模板</div>
-    <div class="card-section">
-      <h4>✨ 核心功能</h4>
-      <div class="card-features"><span class="feature-item">预构建 RAG 模板</span><span class="feature-item">实时数据处理</span><span class="feature-item">企业搜索就绪</span></div>
-    </div>
-    <div class="card-section">
-      <h4>🏷️ 适用场景</h4>
-      <div class="tags"><span class="tag">RAG模板</span><span class="tag">云计算</span><span class="tag">数据管道</span></div>
-    </div>
-  </div>
-
-  <div class="card" style="--accent: #3572A5">
-    <div style="position:absolute;top:0;left:0;width:5px;height:100%;background:#3572A5;border-radius:16px 0 0 16px;"></div>
-    <span class="rank">#19</span>
-    <div class="card-header">
-      <div class="card-title">
-        <a href="https://github.com/MemPalace/mempalace" target="_blank" rel="noopener">MemPalace/mempalace</a>
-      </div>
-      <div class="card-badges">
-        <span class="badge badge-lang" style="background:#3572A5">🐍 Python</span>
-        <span class="badge badge-stars">⭐ 55,153</span>
-        
-      </div>
-    </div>
-    <div class="card-summary">性能最佳的开源 AI 记忆系统，完全免费</div>
-    <div class="card-section">
-      <h4>✨ 核心功能</h4>
-      <div class="card-features"><span class="feature-item">高性能记忆存储</span><span class="feature-item">跨会话记忆保持</span><span class="feature-item">开源免费使用</span></div>
-    </div>
-    <div class="card-section">
-      <h4>🏷️ 适用场景</h4>
-      <div class="tags"><span class="tag">AI记忆</span><span class="tag">持久化</span><span class="tag">开源</span></div>
-    </div>
-  </div>
-
-  <div class="card" style="--accent: #3572A5">
-    <div style="position:absolute;top:0;left:0;width:5px;height:100%;background:#3572A5;border-radius:16px 0 0 16px;"></div>
-    <span class="rank">#20</span>
-    <div class="card-header">
-      <div class="card-title">
-        <a href="https://github.com/crewAIInc/crewAI" target="_blank" rel="noopener">crewAIInc/crewAI</a>
-      </div>
-      <div class="card-badges">
-        <span class="badge badge-lang" style="background:#3572A5">🐍 Python</span>
-        <span class="badge badge-stars">⭐ 53,139</span>
-        
-      </div>
-    </div>
-    <div class="card-summary">角色扮演、自主 AI Agent 的协作编排框架</div>
-    <div class="card-section">
-      <h4>✨ 核心功能</h4>
-      <div class="card-features"><span class="feature-item">多 Agent 角色协作</span><span class="feature-item">自主任务分配</span><span class="feature-item">工作流编排</span></div>
-    </div>
-    <div class="card-section">
-      <h4>🏷️ 适用场景</h4>
-      <div class="tags"><span class="tag">多Agent</span><span class="tag">协作框架</span><span class="tag">自动化</span></div>
-    </div>
-  </div>
-
-  <div class="card" style="--accent: #3572A5">
-    <div style="position:absolute;top:0;left:0;width:5px;height:100%;background:#3572A5;border-radius:16px 0 0 16px;"></div>
-    <span class="rank">#21</span>
-    <div class="card-header">
-      <div class="card-title">
-        <a href="https://github.com/run-llama/llama_index" target="_blank" rel="noopener">run-llama/llama_index</a>
-      </div>
-      <div class="card-badges">
-        <span class="badge badge-lang" style="background:#3572A5">🐍 Python</span>
-        <span class="badge badge-stars">⭐ 50,033</span>
-        
-      </div>
-    </div>
-    <div class="card-summary">领先的文档 Agent 和 OCR 平台</div>
-    <div class="card-section">
-      <h4>✨ 核心功能</h4>
-      <div class="card-features"><span class="feature-item">文档智能处理</span><span class="feature-item">OCR 识别能力</span><span class="feature-item">Agent 检索增强</span></div>
-    </div>
-    <div class="card-section">
-      <h4>🏷️ 适用场景</h4>
-      <div class="tags"><span class="tag">文档AI</span><span class="tag">OCR</span><span class="tag">检索增强</span></div>
-    </div>
-  </div>
-
-  <div class="card" style="--accent: #89e051">
-    <div style="position:absolute;top:0;left:0;width:5px;height:100%;background:#89e051;border-radius:16px 0 0 16px;"></div>
-    <span class="rank">#22</span>
-    <div class="card-header">
-      <div class="card-title">
-        <a href="https://github.com/Leonxlnx/taste-skill" target="_blank" rel="noopener">Leonxlnx/taste-skill</a>
-      </div>
-      <div class="card-badges">
-        <span class="badge badge-lang" style="background:#89e051">🐚 Shell</span>
-        <span class="badge badge-stars">⭐ 39,174</span>
-        <span class="badge badge-weekly">📈 +7,597 本周</span>
-      </div>
-    </div>
-    <div class="card-summary">赋予 AI 好品味的技能，告别千篇一律的输出</div>
-    <div class="card-section">
-      <h4>✨ 核心功能</h4>
-      <div class="card-features"><span class="feature-item">提升 AI 输出质量</span><span class="feature-item">避免低质量内容生成</span><span class="feature-item">品味偏好学习</span></div>
-    </div>
-    <div class="card-section">
-      <h4>🏷️ 适用场景</h4>
-      <div class="tags"><span class="tag">内容质量</span><span class="tag">AI技能</span><span class="tag">创意生成</span></div>
-    </div>
-  </div>
-
-  <div class="card" style="--accent: #3572A5">
-    <div style="position:absolute;top:0;left:0;width:5px;height:100%;background:#3572A5;border-radius:16px 0 0 16px;"></div>
-    <span class="rank">#23</span>
-    <div class="card-header">
-      <div class="card-title">
-        <a href="https://github.com/mvanhorn/last30days-skill" target="_blank" rel="noopener">mvanhorn/last30days-skill</a>
-      </div>
-      <div class="card-badges">
-        <span class="badge badge-lang" style="background:#3572A5">🐍 Python</span>
-        <span class="badge badge-stars">⭐ 36,299</span>
-        <span class="badge badge-weekly">📈 +6,616 本周</span>
-      </div>
-    </div>
-    <div class="card-summary">跨平台话题研究 Agent，自动生成深度摘要</div>
-    <div class="card-section">
-      <h4>✨ 核心功能</h4>
-      <div class="card-features"><span class="feature-item">Reddit/X/YouTube 多平台聚合</span><span class="feature-item">自动话题研究与分析</span><span class="feature-item">智能摘要生成</span></div>
-    </div>
-    <div class="card-section">
-      <h4>🏷️ 适用场景</h4>
-      <div class="tags"><span class="tag">研究工具</span><span class="tag">信息聚合</span><span class="tag">自动摘要</span></div>
-    </div>
-  </div>
-
-  <div class="card" style="--accent: #3178c6">
-    <div style="position:absolute;top:0;left:0;width:5px;height:100%;background:#3178c6;border-radius:16px 0 0 16px;"></div>
-    <span class="rank">#24</span>
-    <div class="card-header">
-      <div class="card-title">
-        <a href="https://github.com/CopilotKit/CopilotKit" target="_blank" rel="noopener">CopilotKit/CopilotKit</a>
-      </div>
-      <div class="card-badges">
-        <span class="badge badge-lang" style="background:#3178c6">📘 TypeScript</span>
-        <span class="badge badge-stars">⭐ 34,401</span>
-        <span class="badge badge-weekly">📈 +2,173 本周</span>
-      </div>
-    </div>
-    <div class="card-summary">Agent 和生成式 UI 的前端开发框架</div>
-    <div class="card-section">
-      <h4>✨ 核心功能</h4>
-      <div class="card-features"><span class="feature-item">React/Angular 多框架支持</span><span class="feature-item">Agent 交互 UI 组件</span><span class="feature-item">AG-UI 协议</span></div>
-    </div>
-    <div class="card-section">
-      <h4>🏷️ 适用场景</h4>
-      <div class="tags"><span class="tag">前端框架</span><span class="tag">Agent UI</span><span class="tag">生成式界面</span></div>
-    </div>
-  </div>
-
-  <div class="card" style="--accent: #3178c6">
-    <div style="position:absolute;top:0;left:0;width:5px;height:100%;background:#3178c6;border-radius:16px 0 0 16px;"></div>
-    <span class="rank">#25</span>
-    <div class="card-header">
-      <div class="card-title">
-        <a href="https://github.com/lfnovo/open-notebook" target="_blank" rel="noopener">lfnovo/open-notebook</a>
-      </div>
-      <div class="card-badges">
-        <span class="badge badge-lang" style="background:#3178c6">📘 TypeScript</span>
-        <span class="badge badge-stars">⭐ 28,242</span>
-        <span class="badge badge-weekly">📈 +3,891 本周</span>
-      </div>
-    </div>
-    <div class="card-summary">开源版 NotebookLM，功能更丰富灵活</div>
-    <div class="card-section">
-      <h4>✨ 核心功能</h4>
-      <div class="card-features"><span class="feature-item">笔记与 AI 结合</span><span class="feature-item">文档智能分析</span><span class="feature-item">灵活的知识管理</span></div>
-    </div>
-    <div class="card-section">
-      <h4>🏷️ 适用场景</h4>
-      <div class="tags"><span class="tag">知识管理</span><span class="tag">AI笔记</span><span class="tag">文档分析</span></div>
-    </div>
-  </div>
-
-</div>
 </div>
 
 <footer>
-  <p>数据来源：<a href="https://github.com" target="_blank">GitHub</a> Trending & Search API · 自动抓取生成</p>
-  <p style="margin-top:6px;">Powered by 🐟 小鸟游星野 · 2026</p>
+  <p>Powered by 🐟 小鸟游星野 · 数据来源 <a href="https://github.com">GitHub</a> Trending</p>
 </footer>
 
 </body>
