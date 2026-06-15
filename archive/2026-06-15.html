@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub AI/ML 周报 2026-06-15</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", "PingFang SC", "Helvetica Neue", sans-serif;
+  background: linear-gradient(135deg, #0d9488 0%, #0f766e 40%, #134e4a 100%);
+  min-height: 100vh;
+  color: #1a1a2e;
+  line-height: 1.6;
+}
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+header {
+  text-align: center;
+  padding: 56px 20px 40px;
+  color: #fff;
+}
+header h1 {
+  font-size: 2.4em;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+header .subtitle {
+  font-size: 1.05em;
+  opacity: 0.85;
+  margin-bottom: 4px;
+}
+header .date {
+  font-size: 0.88em;
+  opacity: 0.65;
+}
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-size: 0.88em;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.back-link:hover { color: #fff; }
+
+/* Card */
+.card {
+  background: rgba(255,255,255,0.95);
+  border-radius: 16px;
+  padding: 28px 30px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  border: 1px solid rgba(255,255,255,0.5);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.card-title a {
+  font-size: 1.25em;
+  font-weight: 700;
+  color: #0d9488;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.card-title a:hover { color: #0f766e; text-decoration: underline; }
+.lang-tag {
+  display: inline-block;
+  background: #f0fdfa;
+  color: #0d9488;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.75em;
+  font-weight: 600;
+  border: 1px solid #ccfbf1;
+}
+.star-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.88em;
+  color: #666;
+}
+.star-total { font-weight: 700; color: #d97706; }
+.star-week { color: #059669; font-weight: 600; }
+.card-desc {
+  font-size: 0.98em;
+  color: #374151;
+  margin-bottom: 14px;
+  line-height: 1.65;
+}
+.card-features {
+  margin-bottom: 14px;
+}
+.card-features h4 {
+  font-size: 0.82em;
+  color: #6b7280;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+.card-features ul {
+  list-style: none;
+  padding: 0;
+}
+.card-features li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.9em;
+  color: #4b5563;
+  margin-bottom: 4px;
+}
+.card-features li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #0d9488;
+  font-weight: 700;
+}
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.card-tags span {
+  display: inline-block;
+  background: #f0fdfa;
+  color: #0d9488;
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-size: 0.78em;
+  font-weight: 500;
+  border: 1px solid #ccfbf1;
+}
+.rank-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 0.8em;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+}
+.rank-1 { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.rank-2 { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
+.rank-3 { background: linear-gradient(135deg, #ec4899, #be185d); }
+.rank-default { background: linear-gradient(135deg, #0d9488, #0f766e); }
+
+footer {
+  text-align: center;
+  padding: 40px 20px 20px;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.82em;
+}
+footer a { color: rgba(255,255,255,0.75); text-decoration: underline; }
+.section-label {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.85em;
+  font-weight: 600;
+  margin-bottom: 16px;
+  padding-left: 4px;
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 640px) {
+  header h1 { font-size: 1.6em; }
+  .card { padding: 20px 18px; }
+  .card-header { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🔬 GitHub AI/ML 周报</h1>
+  <div class="subtitle">2026年6月15日 · 本周热门 AI/机器学习开源项目</div>
+  <div class="date">数据抓取时间：2026-06-15 09:00 CST · GitHub Trending Weekly</div>
+</header>
+
+<div class="container">
+<a class="back-link" href="../index.html">← 返回首页</a>
+
+<div class="section-label">🏆 本周热门 AI/ML 项目（按新增 Star 降序）</div>
+
+<!-- #1 -->
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">
+      <span class="rank-badge rank-1">1</span>
+      <a href="https://github.com/mvanhorn/last30days-skill" target="_blank">mvanhorn/last30days-skill</a>
+      <span class="lang-tag">Python</span>
+    </div>
+    <div class="star-info">
+      <span class="star-total">⭐ 42,008</span>
+      <span class="star-week">+12,053 本周</span>
+    </div>
+  </div>
+  <div class="card-desc">跨 Reddit、X、YouTube、HN、Polymarket 等多平台的 AI 搜索引擎技能，由 AI 代理综合真实用户投票和真金白银押注的数据生成深度研究报告。</div>
+  <div class="card-features">
+    <h4>核心功能</h4>
+    <ul>
+      <li>并行搜索 12+ 平台（Reddit、X、YouTube、TikTok、Polymarket 等），打破信息孤岛</li>
+      <li>基于真实用户互动数据（点赞、投票、押注）进行智能排序与评分</li>
+      <li>AI 代理自动综合多源信息，生成结构化的深度调研报告</li>
+    </ul>
+  </div>
+  <div class="card-tags">
+    <span>AI 搜索</span><span>多平台聚合</span><span>研究助手</span><span>Agent 技能</span>
+  </div>
+</div>
+
+<!-- #2 -->
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">
+      <span class="rank-badge rank-2">2</span>
+      <a href="https://github.com/chopratejas/headroom" target="_blank">chopratejas/headroom</a>
+      <span class="lang-tag">Python</span>
+    </div>
+    <div class="star-info">
+      <span class="star-total">⭐ 27,584</span>
+      <span class="star-week">+10,653 本周</span>
+    </div>
+  </div>
+  <div class="card-desc">AI 代理的上下文压缩层——在工具输出、日志、文件和 RAG 分块到达 LLM 之前进行智能压缩，减少 60-95% 的 Token 消耗，同时保持回答质量不变。</div>
+  <div class="card-features">
+    <h4>核心功能</h4>
+    <ul>
+      <li>6 种压缩算法，支持库调用、代理模式、MCP Server 等多种接入方式</li>
+      <li>本地优先、可逆压缩，确保原始数据不丢失</li>
+      <li>跨代理记忆共享，自动去重，支持 Claude、Codex、Gemini 等主流 Agent</li>
+    </ul>
+  </div>
+  <div class="card-tags">
+    <span>Token 优化</span><span>上下文压缩</span><span>LLM 成本</span><span>MCP</span>
+  </div>
+</div>
+
+<!-- #3 -->
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">
+      <span class="rank-badge rank-3">3</span>
+      <a href="https://github.com/addyosmani/agent-skills" target="_blank">addyosmani/agent-skills</a>
+      <span class="lang-tag">Shell</span>
+    </div>
+    <div class="star-info">
+      <span class="star-total">⭐ 59,479</span>
+      <span class="star-week">+10,445 本周</span>
+    </div>
+  </div>
+  <div class="card-desc">面向 AI 编码代理的生产级工程技能库——由 Google Chrome 团队的 Addy Osmani 打造，为 Claude Code、Codex、Cursor 等 AI 编码工具提供最佳实践驱动的工程能力。</div>
+  <div class="card-features">
+    <h4>核心功能</h4>
+    <ul>
+      <li>涵盖代码审查、测试策略、性能优化、安全审计等工程全流程技能</li>
+      <li>每个技能都经过生产验证，融入 Google 级别的工程标准</li>
+      <li>一键安装到各类 AI 编码代理，即装即用</li>
+    </ul>
+  </div>
+  <div class="card-tags">
+    <span>AI 编码</span><span>工程最佳实践</span><span>Claude Code</span><span>Agent Skills</span>
+  </div>
+</div>
+
+<!-- #4 -->
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">
+      <span class="rank-badge rank-default">4</span>
+      <a href="https://github.com/Leonxlnx/taste-skill" target="_blank">Leonxlnx/taste-skill</a>
+      <span class="lang-tag">Shell</span>
+    </div>
+    <div class="star-info">
+      <span class="star-total">⭐ 43,694</span>
+      <span class="star-week">+7,591 本周</span>
+    </div>
+  </div>
+  <div class="card-desc">AI 前端设计的"反 Slop"框架——通过注入排版、动效、间距等设计品味，让 AI 生成的界面告别千篇一律的模板感，拥有真正的设计质感。</div>
+  <div class="card-features">
+    <h4>核心功能</h4>
+    <ul>
+      <li>可移植的 Agent Skills，增强 AI 构建界面的布局、排版和动效表现</li>
+      <li>配套图像生成技能，用于参考板、品牌套件和 Web/移动端原型设计</li>
+      <li>与 Codex、Cursor、Claude Code 等编码代理无缝配合</li>
+    </ul>
+  </div>
+  <div class="card-tags">
+    <span>UI 设计</span><span>前端开发</span><span>Anti-Slop</span><span>设计系统</span>
+  </div>
+</div>
+
+<!-- #5 -->
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">
+      <span class="rank-badge rank-default">5</span>
+      <a href="https://github.com/safishamsi/graphify" target="_blank">safishamsi/graphify</a>
+      <span class="lang-tag">Python</span>
+    </div>
+    <div class="star-info">
+      <span class="star-total">⭐ 67,156</span>
+      <span class="star-week">+5,478 本周</span>
+    </div>
+  </div>
+  <div class="card-desc">将任意代码文件夹、SQL Schema、R 脚本、文档、论文、图片甚至视频转化为可查询的知识图谱，让 AI 编码助手真正理解整个项目的上下文。</div>
+  <div class="card-features">
+    <h4>核心功能</h4>
+    <ul>
+      <li>支持 50+ 文件格式，自动提取实体关系构建知识图谱</li>
+      <li>应用代码 + 数据库 Schema + 基础设施在一个图中统一呈现</li>
+      <li>兼容 Claude Code、Codex、Cursor、Gemini CLI 等主流 AI 编码工具</li>
+    </ul>
+  </div>
+  <div class="card-tags">
+    <span>知识图谱</span><span>代码理解</span><span>RAG 增强</span><span>AI 编码</span>
+  </div>
+</div>
+
+<!-- #6 -->
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">
+      <span class="rank-badge rank-default">6</span>
+      <a href="https://github.com/Panniantong/Agent-Reach" target="_blank">Panniantong/Agent-Reach</a>
+      <span class="lang-tag">Python</span>
+    </div>
+    <div class="star-info">
+      <span class="star-total">⭐ 28,748</span>
+      <span class="star-week">+5,468 本周</span>
+    </div>
+  </div>
+  <div class="card-desc">给 AI Agent 装上"互联网之眼"——一条命令接入 Twitter、Reddit、YouTube、B站、小红书等全网平台的读取与搜索能力，零 API 费用。</div>
+  <div class="card-features">
+    <h4>核心功能</h4>
+    <ul>
+      <li>统一 CLI 接口覆盖 Twitter、Reddit、YouTube、B站、小红书、GitHub 等平台</li>
+      <li>自动维护多后端路由，平台接口变动时无感切换，用户零操作</li>
+      <li>隐私安全设计，Cookie 仅存本地；自带诊断命令一键排查连接问题</li>
+    </ul>
+  </div>
+  <div class="card-tags">
+    <span>Agent 工具</span><span>多平台接入</span><span>爬虫</span><span>免费 API</span>
+  </div>
+</div>
+
+<!-- #7 -->
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">
+      <span class="rank-badge rank-default">7</span>
+      <a href="https://github.com/NVIDIA/SkillSpector" target="_blank">NVIDIA/SkillSpector</a>
+      <span class="lang-tag">Python</span>
+    </div>
+    <div class="star-info">
+      <span class="star-total">⭐ 5,296</span>
+      <span class="star-week">+3,669 本周</span>
+    </div>
+  </div>
+  <div class="card-desc">NVIDIA 出品的 AI Agent 技能安全扫描器——在安装任何 Agent Skill 之前检测漏洞、恶意模式和安全风险，覆盖 64 种漏洞模式、16 个安全类别。</div>
+  <div class="card-features">
+    <h4>核心功能</h4>
+    <ul>
+      <li>两阶段分析：快速静态扫描 + 可选的 LLM 语义评估，精准识别 Prompt 注入、数据外泄等风险</li>
+      <li>支持 Git 仓库、URL、ZIP、目录等多种输入格式，输出终端/JSON/Markdown/SARIF 报告</li>
+      <li>风险评分 0-100，附严重等级标签和修复建议；支持 Docker 一键部署</li>
+    </ul>
+  </div>
+  <div class="card-tags">
+    <span>安全扫描</span><span>Agent 安全</span><span>NVIDIA</span><span>漏洞检测</span>
+  </div>
+</div>
+
+<!-- #8 -->
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">
+      <span class="rank-badge rank-default">8</span>
+      <a href="https://github.com/lfnovo/open-notebook" target="_blank">lfnovo/open-notebook</a>
+      <span class="lang-tag">TypeScript</span>
+    </div>
+    <div class="star-info">
+      <span class="star-total">⭐ 30,533</span>
+      <span class="star-week">+3,468 本周</span>
+    </div>
+  </div>
+  <div class="card-desc">Google NotebookLM 的开源替代方案——支持 18+ AI 模型提供商，可自托管部署，具备多模态内容管理、智能搜索和专业播客生成等丰富功能。</div>
+  <div class="card-features">
+    <h4>核心功能</h4>
+    <ul>
+      <li>支持 PDF、视频、音频、网页等多模态内容的统一管理与智能检索</li>
+      <li>1-4 位发言人的专业播客自动生成，超越 NotebookLM 的 2 人限制</li>
+      <li>完整 REST API、Docker/本地/云端灵活部署，数据完全自主可控</li>
+    </ul>
+  </div>
+  <div class="card-tags">
+    <span>NotebookLM</span><span>知识管理</span><span>播客生成</span><span>自托管</span>
+  </div>
+</div>
+
+<!-- #9 -->
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">
+      <span class="rank-badge rank-default">9</span>
+      <a href="https://github.com/roboflow/supervision" target="_blank">roboflow/supervision</a>
+      <span class="lang-tag">Python</span>
+    </div>
+    <div class="star-info">
+      <span class="star-total">⭐ 44,196</span>
+      <span class="star-week">+3,315 本周</span>
+    </div>
+  </div>
+  <div class="card-desc">计算机视觉领域的一站式工具包——从数据加载到实时区域计数，提供模型无关的可复用 CV 工具，让你专注于构建应用而非底层基础设施。</div>
+  <div class="card-features">
+    <h4>核心功能</h4>
+    <ul>
+      <li>模型无关设计，兼容 Ultralytics、Transformers、MMDetection 等主流检测/分割框架</li>
+      <li>高度可定制的可视化标注器，从边界框到分割掩码一应俱全</li>
+      <li>数据集工具集：加载、分割、合并、保存，支持多种标注格式互转</li>
+    </ul>
+  </div>
+  <div class="card-tags">
+    <span>计算机视觉</span><span>目标检测</span><span>图像分割</span><span>Roboflow</span>
+  </div>
+</div>
+
+<!-- #10 -->
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">
+      <span class="rank-badge rank-default">10</span>
+      <a href="https://github.com/aaif-goose/goose" target="_blank">aaif-goose/goose</a>
+      <span class="lang-tag">Rust</span>
+    </div>
+    <div class="star-info">
+      <span class="star-total">⭐ 49,377</span>
+      <span class="star-week">+2,165 本周</span>
+    </div>
+  </div>
+  <div class="card-desc">Linux 基金会 Agentic AI Foundation 旗下的通用 AI 代理——不只是代码助手，还支持研究、写作、自动化、数据分析等全场景，Rust 编写保证高性能。</div>
+  <div class="card-features">
+    <h4>核心功能</h4>
+    <ul>
+      <li>原生桌面应用（macOS/Linux/Windows）+ 完整 CLI + API，三种使用方式</li>
+      <li>支持 15+ AI 模型提供商（Anthropic、OpenAI、Google、Ollama 等），70+ MCP 扩展</li>
+      <li>可自定义发行版，预配置提供商、扩展和品牌，打造专属 AI 代理</li>
+    </ul>
+  </div>
+  <div class="card-tags">
+    <span>AI Agent</span><span>通用助手</span><span>桌面应用</span><span>Linux Foundation</span>
+  </div>
+</div>
+
+<!-- #11 -->
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">
+      <span class="rank-badge rank-default">11</span>
+      <a href="https://github.com/openai/plugins" target="_blank">openai/plugins</a>
+      <span class="lang-tag">JavaScript</span>
+    </div>
+    <div class="star-info">
+      <span class="star-total">⭐ 3,031</span>
+      <span class="star-week">+1,085 本周</span>
+    </div>
+  </div>
+  <div class="card-desc">OpenAI 官方 Codex 插件示例集合——涵盖 Figma 设计协作、Notion 知识管理、SwiftUI/MacOS/Web 应用开发等丰富场景的插件模板。</div>
+  <div class="card-features">
+    <h4>核心功能</h4>
+    <ul>
+      <li>Figma 插件：Code to Canvas、Code Connect、设计系统规则集成</li>
+      <li>多平台应用开发插件：SwiftUI、macOS AppKit、React Native/Expo、Web 应用</li>
+      <li>标准化 .codex-plugin 清单格式，支持 skills、MCP、hooks 等扩展机制</li>
+    </ul>
+  </div>
+  <div class="card-tags">
+    <span>OpenAI</span><span>Codex 插件</span><span>设计工具</span><span>应用开发</span>
+  </div>
+</div>
+
+<!-- #12 -->
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">
+      <span class="rank-badge rank-default">12</span>
+      <a href="https://github.com/huggingface/OpenEnv" target="_blank">huggingface/OpenEnv</a>
+      <span class="lang-tag">Python</span>
+    </div>
+    <div class="star-info">
+      <span class="star-total">⭐ 2,217</span>
+      <span class="star-week">+276 本周</span>
+    </div>
+  </div>
+  <div class="card-desc">HuggingFace 出品的 Agent 强化学习训练环境框架——使用 Gymnasium 风格的简洁 API，端到端创建、部署和使用隔离执行环境进行 RL 后训练。</div>
+  <div class="card-features">
+    <h4>核心功能</h4>
+    <ul>
+      <li>Gymnasium 风格的简洁 API，降低 RL 环境开发门槛</li>
+      <li>支持隔离执行环境，安全地进行 Agent RL 训练实验</li>
+      <li>与 PyTorch torchforge 等框架集成，可训练 LLM 完成策略类任务（如 Blackjack）</li>
+    </ul>
+  </div>
+  <div class="card-tags">
+    <span>强化学习</span><span>RL 训练</span><span>HuggingFace</span><span>Agent 训练</span>
+  </div>
+</div>
+
+</div>
+
+<footer>
+  <p>数据来源：<a href="https://github.com/trending?since=weekly" target="_blank">GitHub Trending (Weekly)</a> · 自动筛选 AI/ML 相关项目</p>
+  <p style="margin-top:6px;">Powered by 🐟 小鸟游星野</p>
+</footer>
+
+</body>
+</html>
