@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub AI/ML 周报 · 2026-06-29</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC","PingFang SC",sans-serif;background:linear-gradient(135deg,#92400e 0%,#b45309 50%,#d97706 100%);min-height:100vh;color:#1a1a2e}
+.container{max-width:800px;margin:0 auto;padding:40px 20px 60px}
+header{text-align:center;padding:50px 20px 30px;color:#fff}
+header h1{font-size:2.4em;font-weight:800;text-shadow:0 2px 10px rgba(0,0,0,.15);margin-bottom:8px}
+header .date{font-size:1em;opacity:.8;margin-bottom:4px}
+header .desc{font-size:.88em;opacity:.6;max-width:500px;margin:0 auto;line-height:1.6}
+.stats-bar{display:flex;justify-content:center;gap:24px;margin:20px 0 10px;flex-wrap:wrap}
+.stat{background:rgba(255,255,255,.12);border-radius:12px;padding:10px 20px;color:#fff;text-align:center;min-width:100px}
+.stat .num{font-size:1.5em;font-weight:700}
+.stat .label{font-size:.75em;opacity:.7;margin-top:2px}
+.cards{display:flex;flex-direction:column;gap:18px;margin-top:30px}
+.card{background:rgba(255,255,255,.95);border-radius:16px;padding:24px 28px;box-shadow:0 4px 20px rgba(0,0,0,.06);border:1px solid rgba(255,255,255,.6);transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.1)}
+.card-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.card-title{font-size:1.15em;font-weight:700}
+.card-title a{color:#b45309;text-decoration:none}
+.card-title a:hover{text-decoration:underline}
+.card-title .rank{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;font-size:.75em;font-weight:700;margin-right:8px;flex-shrink:0}
+.card-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lang-tag{display:inline-block;padding:2px 10px;border-radius:20px;font-size:.75em;font-weight:600;background:#fef3c7;color:#92400e;border:1px solid #fde68a}
+.star-info{font-size:.82em;color:#888}
+.star-info .plus{color:#16a34a;font-weight:600}
+.card-desc{font-size:.92em;color:#444;margin-bottom:12px;line-height:1.6}
+.card-section-title{font-size:.78em;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.features{list-style:none;padding:0}
+.features li{position:relative;padding-left:18px;font-size:.88em;color:#555;margin-bottom:4px;line-height:1.5}
+.features li::before{content:"";position:absolute;left:0;top:7px;width:8px;height:8px;border-radius:50%;background:#b45309}
+.scenario-tags{display:flex;flex-wrap:wrap;gap:6px}
+.scenario-tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:.75em;font-weight:500;background:#fefce8;color:#854d0e;border:1px solid #fde68a}
+footer{text-align:center;color:rgba(255,255,255,.6);font-size:.8em;margin-top:50px;padding-top:20px;border-top:1px solid rgba(255,255,255,.15)}
+footer a{color:rgba(255,255,255,.7);text-decoration:none}
+@media(max-width:600px){.container{padding:20px 14px 40px}header h1{font-size:1.8em}.card{padding:18px 16px}.stats-bar{gap:10px}.stat{min-width:80px;padding:8px 14px}.stat .num{font-size:1.2em}}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>🔬 GitHub AI/ML 周报</h1>
+<div class="date">2026 年 6 月 29 日 · Weekly Trending</div>
+<div class="desc">本周 GitHub 上最热门的 AI / 机器学习开源项目精选</div>
+</header>
+
+<div class="stats-bar">
+<div class="stat"><div class="num">17</div><div class="label">入选项目</div></div>
+<div class="stat"><div class="num">76,291</div><div class="label">本周总增星</div></div>
+<div class="stat"><div class="num">8</div><div class="label">Python 项目</div></div>
+</div>
+
+<div class="cards">
+
+<!-- 1 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">1</span><a href="https://github.com/calesthio/OpenMontage" target="_blank">calesthio / OpenMontage</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 26,954 · <span class="plus">+18,703 本周</span></span>
+</div>
+</div>
+<div class="card-desc">全球首个开源的 Agentic 视频制作系统——12 条流水线、52 个工具、500+ Agent 技能，将 AI 编码助手变身为完整的视频制作工作室。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>全链路视频制作：从脚本生成到剪辑合成，覆盖视频生产全流程</li>
+<li>Agent 驱动自动化：利用 AI Agent 自动化视频编辑、特效、转场、音频处理等环节</li>
+<li>海量技能库：500+ 预置技能，支持高度自定义扩展，适配多种视频风格</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">视频制作</span>
+<span class="scenario-tag">内容创作</span>
+<span class="scenario-tag">AI 自动化</span>
+<span class="scenario-tag">多媒体生产</span>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">2</span><a href="https://github.com/DeusData/codebase-memory-mcp" target="_blank">DeusData / codebase-memory-mcp</a></div>
+<div class="card-meta">
+<span class="lang-tag">C</span>
+<span class="star-info">⭐ 19,657 · <span class="plus">+8,926 本周</span></span>
+</div>
+</div>
+<div class="card-desc">高性能代码智能 MCP 服务器——将代码库索引为持久化知识图谱，支持 158 种编程语言，亚毫秒级查询，减少 99% token 消耗。单个静态二进制文件，零依赖。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>知识图谱索引：将代码库转化为可查询的知识图谱结构，捕捉代码间的语义关系</li>
+<li>极速查询：亚毫秒级响应，支持 158 种语言的代码分析与检索</li>
+<li>Token 大幅节省：相比传统 RAG 方式减少 99% 的 token 消耗，大幅降低 LLM 调用成本</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">代码审查</span>
+<span class="scenario-tag">AI 编程助手</span>
+<span class="scenario-tag">大型项目维护</span>
+<span class="scenario-tag">MCP 生态</span>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">3</span><a href="https://github.com/Panniantong/Agent-Reach" target="_blank">Panniantong / Agent-Reach</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 44,476 · <span class="plus">+7,692 本周</span></span>
+</div>
+</div>
+<div class="card-desc">给 AI Agent 装上"眼睛"——一个 CLI 工具即可读取和搜索 Twitter、Reddit、YouTube、GitHub、B站、小红书等平台，无需 API 费用。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>全平台内容读取：覆盖 Twitter、Reddit、YouTube、GitHub、B站、小红书等主流平台</li>
+<li>零 API 费用：无需申请各平台 API Key，直接抓取公开内容</li>
+<li>统一 CLI 接口：一条命令即可跨平台搜索和获取内容，自动维护多后端路由</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">AI Agent 开发</span>
+<span class="scenario-tag">舆情监控</span>
+<span class="scenario-tag">多平台内容聚合</span>
+<span class="scenario-tag">数据采集</span>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">4</span><a href="https://github.com/ZhuLinsen/daily_stock_analysis" target="_blank">ZhuLinsen / daily_stock_analysis</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 51,122 · <span class="plus">+7,045 本周</span></span>
+</div>
+</div>
+<div class="card-desc">LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>多市场数据聚合：整合 A 股、美股、港股、加密货币等多源行情数据</li>
+<li>LLM 智能分析：基于大模型生成技术面、基本面、资讯面的综合分析报告</li>
+<li>自动化运行：支持定时任务、零成本部署（GitHub Actions）、多渠道推送通知</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">量化交易</span>
+<span class="scenario-tag">股票分析</span>
+<span class="scenario-tag">自动化报告</span>
+<span class="scenario-tag">金融 AI</span>
+</div>
+</div>
+
+<!-- 5 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">5</span><a href="https://github.com/google-labs-code/design.md" target="_blank">google-labs-code / design.md</a></div>
+<div class="card-meta">
+<span class="lang-tag">TypeScript</span>
+<span class="star-info">⭐ 22,836 · <span class="plus">+6,728 本周</span></span>
+</div>
+</div>
+<div class="card-desc">面向编码 Agent 的设计系统规范格式——DESIGN.md 让 AI 代理获得持久化、结构化的视觉识别理解，实现设计与代码的同步演进。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>结构化设计规范：定义颜色、排版、间距、组件等设计系统核心要素的机器可读格式</li>
+<li>Agent 原生支持：让 AI 编码助手直接读取并遵循设计规范，减少人工对齐成本</li>
+<li>版本化演进：设计系统变更可追踪、可回滚，支持团队协作与跨项目复用</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">设计系统</span>
+<span class="scenario-tag">AI 编程助手</span>
+<span class="scenario-tag">设计工程化</span>
+<span class="scenario-tag">团队协作</span>
+</div>
+</div>
+
+<!-- 6 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">6</span><a href="https://github.com/topoteretes/cognee" target="_blank">topoteretes / cognee</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 24,899 · <span class="plus">+6,064 本周</span></span>
+</div>
+</div>
+<div class="card-desc">开源 AI 记忆平台——为 AI Agent 提供持久化的长期记忆，基于自托管知识图谱引擎，支持跨会话的上下文保持与推理增强。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>持久化长期记忆：基于知识图谱存储 Agent 交互历史，支持跨会话语义检索</li>
+<li>自托管部署：数据完全自主可控，支持 Docker 一键部署，无厂商锁定</li>
+<li>推理增强：结合图谱检索与向量搜索，为 Agent 提供更精准的上下文感知能力</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">AI 记忆系统</span>
+<span class="scenario-tag">Agent 框架</span>
+<span class="scenario-tag">知识图谱</span>
+<span class="scenario-tag">长期上下文</span>
+</div>
+</div>
+
+<!-- 7 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">7</span><a href="https://github.com/JCodesMore/ai-website-cloner-template" target="_blank">JCodesMore / ai-website-cloner-template</a></div>
+<div class="card-meta">
+<span class="lang-tag">TypeScript</span>
+<span class="star-info">⭐ 22,821 · <span class="plus">+5,317 本周</span></span>
+</div>
+</div>
+<div class="card-desc">一键克隆任意网站的 AI 编码模板——利用 AI 编码代理自动分析目标网站结构、样式与交互，生成可运行的代码副本。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>智能网站分析：AI 自动解析 DOM 结构、CSS 样式、JavaScript 交互逻辑</li>
+<li>代码自动生成：基于分析结果生成 React/Vue/原生 HTML 等多框架代码</li>
+<li>开箱即用模板：预置配置与工作流，一条命令启动克隆任务</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">网站克隆</span>
+<span class="scenario-tag">AI 编码</span>
+<span class="scenario-tag">快速原型</span>
+<span class="scenario-tag">前端开发</span>
+</div>
+</div>
+
+<!-- 8 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">8</span><a href="https://github.com/mukul975/Anthropic-Cybersecurity-Skills" target="_blank">mukul975 / Anthropic-Cybersecurity-Skills</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 22,661 · <span class="plus">+5,212 本周</span></span>
+</div>
+</div>
+<div class="card-desc">817 个结构化网络安全技能——映射到 MITRE ATT&CK、NIST CSF 2.0、MITRE ATLAS 等 6 大框架，兼容 Claude Code、GitHub Copilot、Cursor 等 20+ 平台。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>标准化技能库：817 个网络安全技能，覆盖 29 个安全域，映射 6 大主流合规框架</li>
+<li>多平台兼容：适配 Claude Code、GitHub Copilot、Codex CLI、Cursor、Gemini CLI 等主流 AI 编码工具</li>
+<li>agentskills.io 标准：遵循开放技能规范，易于扩展、组合与分发</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">网络安全</span>
+<span class="scenario-tag">AI Agent 技能</span>
+<span class="scenario-tag">合规审计</span>
+<span class="scenario-tag">威胁建模</span>
+</div>
+</div>
+
+<!-- 9 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">9</span><a href="https://github.com/palmier-io/palmier-pro" target="_blank">palmier-io / palmier-pro</a></div>
+<div class="card-meta">
+<span class="lang-tag">Swift</span>
+<span class="star-info">⭐ 9,304 · <span class="plus">+5,034 本周</span></span>
+</div>
+</div>
+<div class="card-desc">专为 AI 时代构建的 macOS 视频编辑器——原生集成 AI 能力，支持智能剪辑、自动字幕、内容感知编辑等新一代创作体验。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>AI 原生编辑：集成大模型能力，支持自然语言指令驱动视频剪辑操作</li>
+<li>智能内容理解：自动识别视频内容、语音转文字、场景分割与高光提取</li>
+<li>macOS 原生性能：基于 Swift + Metal 构建，充分发挥 Apple Silicon 性能优势</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">视频编辑</span>
+<span class="scenario-tag">macOS 应用</span>
+<span class="scenario-tag">AI 创作工具</span>
+<span class="scenario-tag">内容生产</span>
+</div>
+</div>
+
+<!-- 10 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">10</span><a href="https://github.com/jamiepine/voicebox" target="_blank">jamiepine / voicebox</a></div>
+<div class="card-meta">
+<span class="lang-tag">TypeScript</span>
+<span class="star-info">⭐ 35,438 · <span class="plus">+3,883 本周</span></span>
+</div>
+</div>
+<div class="card-desc">开源 AI 声音工作室——支持语音克隆、语音口述、声音创作，让每个人都能拥有专属的 AI 声音身份。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>语音克隆：仅需少量音频样本即可高保真复刻目标声音</li>
+<li>实时语音合成：低延迟 TTS 推理，支持流式输出与多情感控制</li>
+<li>开源可自托管：数据隐私可控，支持本地部署与私有化定制</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">语音合成</span>
+<span class="scenario-tag">声音克隆</span>
+<span class="scenario-tag">TTS</span>
+<span class="scenario-tag">音频创作</span>
+</div>
+</div>
+
+<!-- 11 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">11</span><a href="https://github.com/bytedance/deer-flow" target="_blank">bytedance / deer-flow</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 75,244 · <span class="plus">+2,976 本周</span></span>
+</div>
+</div>
+<div class="card-desc">字节跳动开源的长周期超级 Agent 框架——结合沙箱、记忆、工具、技能、子 Agent 与消息网关，处理从几分钟到数小时的复杂任务。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>长周期任务编排：支持研究、编码、创作等跨时段的复杂工作流自动化</li>
+<li>多层记忆架构：短时工作记忆 + 长时语义记忆 + 程序性技能记忆三层体系</li>
+<li>沙箱隔离执行：代码运行、工具调用在安全沙箱中隔离，保障系统安全</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">Agent 框架</span>
+<span class="scenario-tag">长任务自动化</span>
+<span class="scenario-tag">多 Agent 协作</span>
+<span class="scenario-tag">企业级 AI</span>
+</div>
+</div>
+
+<!-- 12 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">12</span><a href="https://github.com/koala73/worldmonitor" target="_blank">koala73 / worldmonitor</a></div>
+<div class="card-meta">
+<span class="lang-tag">TypeScript</span>
+<span class="star-info">⭐ 60,704 · <span class="plus">+2,845 本周</span></span>
+</div>
+</div>
+<div class="card-desc">实时全球情报仪表盘——AI 驱动的新闻聚合、地缘政治监测、基础设施追踪，统一态势感知界面。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>多源情报聚合：整合新闻、社交媒体、卫星数据、开源情报等多维信息源</li>
+<li>AI 智能分析：自动识别关键事件、趋势演变、风险预警，生成结构化简报</li>
+<li>实时态势可视化：地理空间可视化、时间轴回溯、关联网络图谱多维呈现</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">情报分析</span>
+<span class="scenario-tag">态势感知</span>
+<span class="scenario-tag">地缘监测</span>
+<span class="scenario-tag">决策支持</span>
+</div>
+</div>
+
+<!-- 13 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">13</span><a href="https://github.com/stablyai/orca" target="_blank">stablyai / orca</a></div>
+<div class="card-meta">
+<span class="lang-tag">TypeScript</span>
+<span class="star-info">⭐ 8,618 · <span class="plus">+2,769 本周</span></span>
+</div>
+</div>
+<div class="card-desc">面向并行 Agent 舰队的 ADE（Agent Development Environment）——支持多订阅管理，桌面端与移动端全平台覆盖。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>并行 Agent 编排：同时管理多个编码 Agent 实例，协同完成大型任务</li>
+<li>订阅灵活管理：自带 API Key 管理，支持在不同模型订阅间无缝切换</li>
+<li>跨平台 IDE：桌面应用 + 移动端适配，随时随地监控与干预 Agent 工作</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">Agent 编排</span>
+<span class="scenario-tag">并行开发</span>
+<span class="scenario-tag">IDE 工具</span>
+<span class="scenario-tag">团队协作</span>
+</div>
+</div>
+
+<!-- 14 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">14</span><a href="https://github.com/interviewstreet/hiring-agent" target="_blank">interviewstreet / hiring-agent</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 3,172 · <span class="plus">+1,973 本周</span></span>
+</div>
+</div>
+<div class="card-desc">AI 面试评估 Agent——自动化简历筛选、技能匹配、候选人评分，助力招聘流程智能化升级。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>简历智能解析：自动提取技能、经验、项目亮点，构建结构化人才画像</li>
+<li>多维度评分模型：基于职位需求的技能匹配度、经验相关度、文化契合度综合评估</li>
+<li>可解释推荐：提供评分依据与证据链路，便于 HR 复核与候选人反馈</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">智能招聘</span>
+<span class="scenario-tag">简历筛选</span>
+<span class="scenario-tag">HR Tech</span>
+<span class="scenario-tag">人才评估</span>
+</div>
+</div>
+
+<!-- 15 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">15</span><a href="https://github.com/alibaba/page-agent" target="_blank">alibaba / page-agent</a></div>
+<div class="card-meta">
+<span class="lang-tag">TypeScript</span>
+<span class="star-info">⭐ 20,473 · <span class="plus">+1,778 本周</span></span>
+</div>
+</div>
+<div class="card-desc">页面级 GUI Agent——在浏览器页面内直接用自然语言控制 Web 界面，实现网页自动化操作与智能交互。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>页面内原生控制：无需外部驱动，直接在页面上下文中执行 DOM 操作与交互</li>
+<li>自然语言指令：用户可用中文/英文直接描述操作意图，Agent 自动规划执行步骤</li>
+<li>可视化反馈：操作过程实时高亮、轨迹回放，便于调试与验证</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">Web 自动化</span>
+<span class="scenario-tag">GUI Agent</span>
+<span class="scenario-tag">浏览器控制</span>
+<span class="scenario-tag">E2E 测试</span>
+</div>
+</div>
+
+<!-- 16 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">16</span><a href="https://github.com/BuilderIO/agent-native" target="_blank">BuilderIO / agent-native</a></div>
+<div class="card-meta">
+<span class="lang-tag">TypeScript</span>
+<span class="star-info">⭐ 2,888 · <span class="plus">+1,540 本周</span></span>
+</div>
+</div>
+<div class="card-desc">Agent 原生应用框架——为 AI Agent 优先的应用架构提供基础设施，重新定义前端与 Agent 的协作模式。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>Agent 优先架构：从状态管理、数据流到 UI 渲染，全栈适配 Agent 驱动模式</li>
+<li>实时协作协议：支持人机共编、多 Agent 并发操作的冲突解决与状态同步</li>
+<li>可视化构建器集成：与 Builder.io 可视化编辑器深度联动，所见即所得配置 Agent 行为</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">Agent 框架</span>
+<span class="scenario-tag">前端架构</span>
+<span class="scenario-tag">实时协作</span>
+<span class="scenario-tag">低代码平台</span>
+</div>
+</div>
+
+<!-- 17 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">17</span><a href="https://github.com/aws/agent-toolkit-for-aws" target="_blank">aws / agent-toolkit-for-aws</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 1,542 · <span class="plus">+600 本周</span></span>
+</div>
+</div>
+<div class="card-desc">AWS 官方 Agent 工具包——提供 MCP 服务器、技能与插件，帮助 AI Agent 在 AWS 上构建、部署与运维云原生应用。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>AWS 服务技能库：封装 200+ AWS 服务为标准化 Agent 技能，覆盖计算、存储、数据库、AI 等全栈</li>
+<li>MCP 服务器支持：标准化的模型上下文协议接入，兼容 Claude、Cursor、VS Code 等客户端</li>
+<li>基础设施即代码：Agent 可直接生成、部署 CDK/CloudFormation/Terraform 云资源定义</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">云原生开发</span>
+<span class="scenario-tag">AWS 生态</span>
+<span class="scenario-tag">Agent 工具链</span>
+<span class="scenario-tag">基础设施自动化</span>
+</div>
+</div>
+
+</div>
+
+<footer>
+<p>数据抓取时间：2026-06-29 09:00 CST (Asia/Shanghai) · 数据来源：<a href="https://github.com/trending?since=weekly" target="_blank">GitHub Trending Weekly</a></p>
+<p style="margin-top:6px">由 🐾 AI Trending 自动生成</p>
+</footer>
+</div>
+</body>
+</html>
