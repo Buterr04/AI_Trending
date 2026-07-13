@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub AI/ML 周报 · 2026-07-13</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC","PingFang SC",sans-serif;background:linear-gradient(135deg, #1e3a8a 0%, #3b82f6 40%, #60a5fa 100%);min-height:100vh;color:#1a1a2e}
+.container{max-width:800px;margin:0 auto;padding:40px 20px 60px}
+header{text-align:center;padding:50px 20px 30px;color:#fff}
+header h1{font-size:2.4em;font-weight:800;text-shadow:0 2px 10px rgba(0,0,0,.15);margin-bottom:8px}
+header .date{font-size:1em;opacity:.8;margin-bottom:4px}
+header .desc{font-size:.88em;opacity:.6;max-width:500px;margin:0 auto;line-height:1.6}
+.stats-bar{display:flex;justify-content:center;gap:24px;margin:20px 0 10px;flex-wrap:wrap}
+.stat{background:rgba(255,255,255,.12);border-radius:12px;padding:10px 20px;color:#fff;text-align:center;min-width:100px}
+.stat .num{font-size:1.5em;font-weight:700}
+.stat .label{font-size:.75em;opacity:.7;margin-top:2px}
+.cards{display:flex;flex-direction:column;gap:18px;margin-top:30px}
+.card{background:rgba(255,255,255,.95);border-radius:16px;padding:24px 28px;box-shadow:0 4px 20px rgba(0,0,0,.06);border:1px solid rgba(255,255,255,.6);transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.1)}
+.card-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.card-title{font-size:1.15em;font-weight:700}
+.card-title a{color:#7e22ce;text-decoration:none}
+.card-title a:hover{text-decoration:underline}
+.card-title .rank{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#a855f7,#7e22ce);color:#fff;font-size:.75em;font-weight:700;margin-right:8px;flex-shrink:0}
+.card-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lang-tag{display:inline-block;padding:2px 10px;border-radius:20px;font-size:.75em;font-weight:600;background:#f3e8ff;color:#581c87;border:1px solid #e9d5ff}
+.star-info{font-size:.82em;color:#888}
+.star-info .plus{color:#16a34a;font-weight:600}
+.card-desc{font-size:.92em;color:#444;margin-bottom:12px;line-height:1.6}
+.card-section-title{font-size:.78em;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.features{list-style:none;padding:0}
+.features li{position:relative;padding-left:18px;font-size:.88em;color:#555;margin-bottom:4px;line-height:1.5}
+.features li::before{content:"";position:absolute;left:0;top:7px;width:8px;height:8px;border-radius:50%;background:#7e22ce}
+.scenario-tags{display:flex;flex-wrap:wrap;gap:6px}
+.scenario-tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:.75em;font-weight:500;background:#faf5ff;color:#581c87;border:1px solid #e9d5ff}
+.archive-link{display:inline-block;margin-bottom:24px;color:rgba(255,255,255,.8);text-decoration:none;font-size:.9em;font-weight:500}
+.archive-link:hover{text-decoration:underline}
+footer{text-align:center;color:rgba(255,255,255,.6);font-size:.8em;margin-top:50px;padding-top:20px;border-top:1px solid rgba(255,255,255,.15)}
+footer a{color:rgba(255,255,255,.7);text-decoration:none}
+@media(max-width:600px){.container{padding:20px 14px 40px}header h1{font-size:1.8em}.card{padding:18px 16px}.stats-bar{gap:10px}.stat{min-width:80px;padding:8px 14px}.stat .num{font-size:1.2em}}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>🔬 GitHub AI/ML 周报</h1>
+<div class="date">2026-07-13 · Weekly Trending</div>
+<div class="desc">本周 GitHub 上最热门的 AI / 机器学习开源项目精选</div>
+</header>
+
+<div class="stats-bar">
+<div class="stat"><div class="num">16</div><div class="label">入选项目</div></div>
+<div class="stat"><div class="num">62,119</div><div class="label">本周总增星</div></div>
+<div class="stat"><div class="num">5</div><div class="label">编程语言</div></div>
+</div>
+
+<a class="archive-link" href="archive/index.html">📚 历史周报合集 →</a>
+
+<div class="cards">
+
+<!-- 1 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">1</span><a href="https://github.com/TencentCloud/CubeSandbox" target="_blank">TencentCloud / CubeSandbox</a></div>
+<div class="card-meta">
+<span class="lang-tag">Rust</span>
+<span class="star-info">⭐ 9,803 · <span class="plus">+7,440 本周</span></span>
+</div>
+</div>
+<div class="card-desc">Instant, Concurrent, Secure & Lightweight Sandbox for AI Agents.</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>即时启动：毫秒级沙箱冷启动，支持高并发 AI Agent 隔离运行</li><li>安全隔离：基于 Rust 编写，内存安全，防止代码逃逸与资源滥用</li><li>轻量级设计：极低资源占用，适合大规模 AI Agent 编排部署</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">AI Agent 运行环境</span><span class="scenario-tag">代码执行沙箱</span><span class="scenario-tag">多租户隔离</span><span class="scenario-tag">云原生部署</span>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">2</span><a href="https://github.com/bradautomates/claude-video" target="_blank">bradautomates / claude-video</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 12,268 · <span class="plus">+7,155 本周</span></span>
+</div>
+</div>
+<div class="card-desc">给 Claude 看视频的能力——/watch 下载、抽帧、转录，全部交给 Claude 处理。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>视频下载与抽帧：自动下载视频并提取关键帧供模型理解</li><li>语音转录集成：自动生成字幕文本，配合视觉信息多模态理解</li><li>Claude 原生集成：通过 slash command 无缝融入 Claude Code 工作流</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">视频内容理解</span><span class="scenario-tag">多模态 AI</span><span class="scenario-tag">教育培训</span><span class="scenario-tag">媒体分析</span>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">3</span><a href="https://github.com/alirezarezvani/claude-skills" target="_blank">alirezarezvani / claude-skills</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 8,921 · <span class="plus">+6,978 本周</span></span>
+</div>
+</div>
+<div class="card-desc">Claude 技能库——为 Claude Code 提供可复用、可组合的技能模块，扩展编程助手能力边界。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>技能模块化：将常用工作流封装为可复用的 Skill，一键调用</li><li>社区驱动生态：大量第三方 Skill 可直接安装，持续扩展能力边界</li><li>组合式工作流：多个 Skill 自由编排，构建复杂自动化流水线</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">AI 编程助手</span><span class="scenario-tag">工作流自动化</span><span class="scenario-tag">技能复用</span><span class="scenario-tag">开发者效率</span>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">4</span><a href="https://github.com/diegosouzapw/OmniRoute" target="_blank">diegosouzapw / OmniRoute</a></div>
+<div class="card-meta">
+<span class="lang-tag">TypeScript</span>
+<span class="star-info">⭐ 16,228 · <span class="plus">+4,506 本周</span></span>
+</div>
+</div>
+<div class="card-desc">永不停机的 AI Gateway——一个端点接入 231+ 供应商（50+ 免费），自动路由、负载均衡、故障切换，编码永不中断。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>231+ 供应商聚合：一个 API 端点访问所有主流 LLM 供应商，50+ 免费额度</li><li>智能路由与故障切换：自动选择最优供应商，单点故障不影响服务</li><li>零配置负载均衡：开箱即用的流量分配，最大化利用免费额度</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">API 网关</span><span class="scenario-tag">LLM 成本优化</span><span class="scenario-tag">多模型调度</span><span class="scenario-tag">高可用部署</span>
+</div>
+</div>
+
+<!-- 5 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">5</span><a href="https://github.com/stablyai/orca" target="_blank">stablyai / orca</a></div>
+<div class="card-meta">
+<span class="lang-tag">TypeScript</span>
+<span class="star-info">⭐ 16,992 · <span class="plus">+4,481 本周</span></span>
+</div>
+</div>
+<div class="card-desc">Agent 集群开发环境——并行运行多个编码 Agent，统一管理和监控，像 IDE 一样开发 Agent 集群。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>并行 Agent 运行：同时启动和管理多个编码 Agent 实例</li><li>统一开发环境：Agent IDE (ADE) 提供代码编辑、调试、监控一体化体验</li><li>灵活调度：支持任意编码 Agent 框架，不锁定特定实现</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">Agent 开发</span><span class="scenario-tag">多 Agent 集群</span><span class="scenario-tag">AI 编程</span><span class="scenario-tag">开发工具</span>
+</div>
+</div>
+
+<!-- 6 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">6</span><a href="https://github.com/alibaba/page-agent" target="_blank">alibaba / page-agent</a></div>
+<div class="card-meta">
+<span class="lang-tag">TypeScript</span>
+<span class="star-info">⭐ 24,433 · <span class="plus">+4,353 本周</span></span>
+</div>
+</div>
+<div class="card-desc">阿里开源的网页 GUI Agent——用自然语言操控网页界面，自动执行点击、填写、导航等交互操作。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>自然语言操控：用日常语言描述操作意图，Agent 自动执行网页交互</li><li>全链路 UI 自动化：覆盖表单填写、按钮点击、页面导航等常见操作</li><li>轻量集成：JavaScript 嵌入即用，无需额外运行时</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">Web 自动化</span><span class="scenario-tag">RPA</span><span class="scenario-tag">UI 测试</span><span class="scenario-tag">数据采集</span>
+</div>
+</div>
+
+<!-- 7 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">7</span><a href="https://github.com/openai/codex-plugin-cc" target="_blank">openai / codex-plugin-cc</a></div>
+<div class="card-meta">
+<span class="lang-tag">JavaScript</span>
+<span class="star-info">⭐ 26,016 · <span class="plus">+4,143 本周</span></span>
+</div>
+</div>
+<div class="card-desc">在 Claude Code 中调用 Codex——让 Claude Code 用户直接使用 OpenAI Codex 能力进行代码审查和任务委派，两大生态互联互通。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>Claude Code 内置 Codex：无需切换工具，在 Claude Code 中直接调用 Codex</li><li>代码审查增强：利用 Codex 的代码理解能力辅助 Review</li><li>任务智能委派：根据任务类型自动选择 Claude 或 Codex 执行</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">AI 编程</span><span class="scenario-tag">代码审查</span><span class="scenario-tag">多模型协作</span><span class="scenario-tag">开发者工具</span>
+</div>
+</div>
+
+<!-- 8 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">8</span><a href="https://github.com/ruvnet/RuView" target="_blank">ruvnet / RuView</a></div>
+<div class="card-meta">
+<span class="lang-tag">Rust</span>
+<span class="star-info">⭐ 8,523 · <span class="plus">+3,992 本周</span></span>
+</div>
+</div>
+<div class="card-desc">高性能代码可视化工具——将代码库渲染为交互式图谱，支持依赖分析、调用链追踪、架构洞察。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>交互式代码图谱：函数调用、模块依赖、数据流向可视化呈现</li><li>增量更新渲染：大型代码库毫秒级刷新，支持实时编辑同步</li><li>多语言统一视图：Rust/JS/Python/Go 等混合项目统一建模分析</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">代码审查</span><span class="scenario-tag">架构分析</span><span class="scenario-tag">遗留系统重构</span><span class="scenario-tag">团队知识传递</span>
+</div>
+</div>
+
+<!-- 9 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">9</span><a href="https://github.com/ogulcancelik/herdr" target="_blank">ogulcancelik / herdr</a></div>
+<div class="card-meta">
+<span class="lang-tag">Rust</span>
+<span class="star-info">⭐ 15,791 · <span class="plus">+3,928 本周</span></span>
+</div>
+</div>
+<div class="card-desc">终端里的 Agent 多路复用器——在一个终端会话中同时管理和调度多个 AI Agent，像 tmux 管理 shell 一样管理 Agent。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>多 Agent 并发管理：单终端同时运行和切换多个 AI Agent 会话</li><li>灵活路由分发：根据任务类型自动分配到最合适的 Agent</li><li>轻量终端原生：纯 CLI 设计，无需 GUI，远程服务器也能用</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">多 Agent 开发</span><span class="scenario-tag">终端工作流</span><span class="scenario-tag">AI Agent 编排</span><span class="scenario-tag">DevOps 自动化</span>
+</div>
+</div>
+
+<!-- 10 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">10</span><a href="https://github.com/vxcontrol/pentagi" target="_blank">vxcontrol / pentagi</a></div>
+<div class="card-meta">
+<span class="lang-tag">Go</span>
+<span class="star-info">⭐ 12,519 · <span class="plus">+3,763 本周</span></span>
+</div>
+</div>
+<div class="card-desc">自主渗透测试 Agent 系统——多 Agent 协作完成从信息收集到漏洞利用的全流程渗透测试。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>多 Agent 协作：侦察、扫描、利用、后渗透各阶段由专用 Agent 执行</li><li>自主决策链：Agent 根据上下文自动规划下一步动作，无需人工干预</li><li>完整渗透流程：覆盖外网渗透、内网横向、权限提升、痕迹清理全链路</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">自动化渗透测试</span><span class="scenario-tag">红队演练</span><span class="scenario-tag">安全评估</span><span class="scenario-tag">Agent 编排</span>
+</div>
+</div>
+
+<!-- 11 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">11</span><a href="https://github.com/usestrix/strix" target="_blank">usestrix / strix</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 37,705 · <span class="plus">+2,666 本周</span></span>
+</div>
+</div>
+<div class="card-desc">开源 AI 渗透测试工具——自动发现并修复应用安全漏洞，让安全测试像写代码一样简单。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>AI 驱动漏洞扫描：基于 LLM 智能分析攻击面，自动生成测试用例</li><li>全自动修复建议：发现漏洞后提供可执行的修复代码和详细解释</li><li>多协议支持：覆盖 HTTP/WebSocket/API 等常见攻击向量</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">安全测试</span><span class="scenario-tag">渗透测试</span><span class="scenario-tag">DevSecOps</span><span class="scenario-tag">代码审计</span>
+</div>
+</div>
+
+<!-- 12 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">12</span><a href="https://github.com/tt-a1i/archify" target="_blank">tt-a1i / archify</a></div>
+<div class="card-meta">
+<span class="lang-tag">TypeScript</span>
+<span class="star-info">⭐ 6,234 · <span class="plus">+2,397 本周</span></span>
+</div>
+</div>
+<div class="card-desc">Any Agent Skill：生成美观架构图的技能模块，支持深/浅色主题切换和 PNG/JPEG/WebP/SVG 导出。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>一键生成架构图：Agent 调用即可生成专业级架构图表</li><li>主题自适应：内置深/浅色主题，自动适配文档风格</li><li>多格式导出：支持 PNG/JPEG/WebP/SVG，满足文档与演示需求</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">架构设计</span><span class="scenario-tag">技术文档</span><span class="scenario-tag">Agent 技能</span><span class="scenario-tag">图表生成</span>
+</div>
+</div>
+
+<!-- 13 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">13</span><a href="https://github.com/ChromeDevTools/chrome-devtools-mcp" target="_blank">ChromeDevTools / chrome-devtools-mcp</a></div>
+<div class="card-meta">
+<span class="lang-tag">TypeScript</span>
+<span class="star-info">⭐ 46,021 · <span class="plus">+2,272 本周</span></span>
+</div>
+</div>
+<div class="card-desc">Chrome DevTools MCP 服务器——让编码 Agent 直接操控 Chrome DevTools，实时调试、性能分析和 DOM 操作。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>Agent 原生调试：AI 编码助手通过 MCP 协议直接操控浏览器开发者工具</li><li>实时性能分析：自动检测页面性能瓶颈并给出优化建议</li><li>DOM 实时操作：Agent 可直接审查和修改页面元素与样式</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">AI 辅助调试</span><span class="scenario-tag">性能优化</span><span class="scenario-tag">前端自动化</span><span class="scenario-tag">开发工具</span>
+</div>
+</div>
+
+<!-- 14 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">14</span><a href="https://github.com/Zackriya-Solutions/meetily" target="_blank">Zackriya-Solutions / meetily</a></div>
+<div class="card-meta">
+<span class="lang-tag">Rust</span>
+<span class="star-info">⭐ 18,353 · <span class="plus">+1,993 本周</span></span>
+</div>
+</div>
+<div class="card-desc">隐私优先的 AI 会议助手——4 倍速 Parakeet/Whisper 实时转写，本地运行，会议内容不出设备。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>本地实时转写：基于 Parakeet/Whisper 的 4 倍速语音转文字，数据不离设备</li><li>隐私优先架构：所有处理在本地完成，零数据上传云端</li><li>AI 会议摘要：自动生成会议纪要、行动项和关键决策提取</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">会议记录</span><span class="scenario-tag">隐私合规</span><span class="scenario-tag">语音转文字</span><span class="scenario-tag">远程办公</span>
+</div>
+</div>
+
+<!-- 15 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">15</span><a href="https://github.com/JuliusBrussee/caveman" target="_blank">JuliusBrussee / caveman</a></div>
+<div class="card-meta">
+<span class="lang-tag">JavaScript</span>
+<span class="star-info">⭐ 85,432 · <span class="plus">+1,180 本周</span></span>
+</div>
+</div>
+<div class="card-desc">Claude Code 效率神器——通过精简提示词和上下文策略，将代码生成 token 消耗削减 65%，省时省钱。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>Token 大幅削减：优化提示词策略，减少 65% 的 LLM token 消耗</li><li>即插即用：作为 Claude Code skill 直接加载，无需额外配置</li><li>智能上下文压缩：自动识别冗余信息，保留核心语义</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">Claude Code 用户</span><span class="scenario-tag">成本优化</span><span class="scenario-tag">大型项目开发</span><span class="scenario-tag">提示词工程</span>
+</div>
+</div>
+
+<!-- 16 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">16</span><a href="https://github.com/wonderwhy-er/DesktopCommanderMCP" target="_blank">wonderwhy-er / DesktopCommanderMCP</a></div>
+<div class="card-meta">
+<span class="lang-tag">TypeScript</span>
+<span class="star-info">⭐ 5,421 · <span class="plus">+872 本周</span></span>
+</div>
+</div>
+<div class="card-desc">桌面级 MCP 服务器——让 AI 直接操控桌面应用、文件系统、Shell，实现真正的计算机使用自动化。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>桌面全权控制：文件操作、应用启动、剪贴板、窗口管理一站式覆盖</li><li>MCP 标准协议：兼容所有支持 MCP 的 AI 客户端（Claude、Cursor 等）</li><li>安全沙箱模式：可配置权限边界，防止误操作敏感资源</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">桌面自动化</span><span class="scenario-tag">MCP 生态</span><span class="scenario-tag">AI 操作电脑</span><span class="scenario-tag">效率工具</span>
+</div>
+</div>
+
+</div>
+
+<footer>
+<p>Powered by 🐟 小鸟游星野 · 数据来源 <a href="https://github.com/trending?since=weekly">GitHub Trending</a></p>
+</footer>
+</div>
+</body>
+</html>

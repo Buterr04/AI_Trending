@@ -56,6 +56,8 @@ header .subtitle {
     box-shadow: 0 4px 16px rgba(0,0,0,0.06);
     transition: transform 0.2s;
     border: 1px solid rgba(255,255,255,0.6);
+    text-decoration: none;
+    color: inherit;
 }
 .item:hover {
     transform: translateY(-2px);
@@ -79,6 +81,15 @@ header .subtitle {
     color: #333;
     font-weight: 500;
 }
+.current-tag {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.7em;
+    font-weight: 700;
+    margin-left: 6px;
+}
 .item-link {
     color: #0d9488;
     text-decoration: none;
@@ -92,15 +103,6 @@ header .subtitle {
 .item-link:hover {
     background: #ccfbf1;
     text-decoration: underline;
-}
-.current-tag {
-    background: linear-gradient(135deg, #f59e0b, #d97706);
-    color: #fff;
-    padding: 2px 8px;
-    border-radius: 10px;
-    font-size: 0.7em;
-    font-weight: 700;
-    margin-left: 6px;
 }
 footer {
     text-align: center;
@@ -119,20 +121,26 @@ footer a {
 </style>
 </head>
 <body>
-
 <header>
   <h1>📚 GitHub AI/ML 周报合集</h1>
   <div class="subtitle">所有历史周报一览 · 按时间倒序排列</div>
 </header>
-
 <div class="container">
 <a class="back-link" href="../index.html">← 返回首页</a>
 <div class="list">
 
   <div class="item">
     <div class="item-left">
+      <span class="item-date">2026-07-13</span>
+      <span class="item-label">AI/ML 周报 2026-07-13 <span class="current-tag">最新</span></span>
+    </div>
+    <a class="item-link" href="2026-07-13.html">查看 →</a>
+  </div>
+
+  <div class="item">
+    <div class="item-left">
       <span class="item-date">2026-07-06</span>
-      <span class="item-label">AI/ML 周报 2026-07-06 <span class="current-tag">最新</span></span>
+      <span class="item-label">AI/ML 周报 2026-07-06 </span>
     </div>
     <a class="item-link" href="2026-07-06.html">查看 →</a>
   </div>
@@ -140,7 +148,7 @@ footer a {
   <div class="item">
     <div class="item-left">
       <span class="item-date">2026-06-29</span>
-      <span class="item-label">AI/ML 周报 2026-06-29</span>
+      <span class="item-label">AI/ML 周报 2026-06-29 </span>
     </div>
     <a class="item-link" href="2026-06-29.html">查看 →</a>
   </div>
@@ -148,7 +156,7 @@ footer a {
   <div class="item">
     <div class="item-left">
       <span class="item-date">2026-06-22</span>
-      <span class="item-label">AI/ML 周报 2026-06-22</span>
+      <span class="item-label">AI/ML 周报 2026-06-22 </span>
     </div>
     <a class="item-link" href="2026-06-22.html">查看 →</a>
   </div>
@@ -156,7 +164,7 @@ footer a {
   <div class="item">
     <div class="item-left">
       <span class="item-date">2026-06-15</span>
-      <span class="item-label">AI/ML 周报 2026-06-15</span>
+      <span class="item-label">AI/ML 周报 2026-06-15 </span>
     </div>
     <a class="item-link" href="2026-06-15.html">查看 →</a>
   </div>
@@ -164,7 +172,7 @@ footer a {
   <div class="item">
     <div class="item-left">
       <span class="item-date">2026-06-09</span>
-      <span class="item-label">AI/ML 周报 2026-06-09</span>
+      <span class="item-label">AI/ML 周报 2026-06-09 </span>
     </div>
     <a class="item-link" href="2026-06-09.html">查看 →</a>
   </div>
@@ -172,7 +180,7 @@ footer a {
   <div class="item">
     <div class="item-left">
       <span class="item-date">2026-06-08</span>
-      <span class="item-label">AI/ML 周报 2026-06-08</span>
+      <span class="item-label">AI/ML 周报 2026-06-08 </span>
     </div>
     <a class="item-link" href="2026-06-08.html">查看 →</a>
   </div>
@@ -180,17 +188,15 @@ footer a {
   <div class="item">
     <div class="item-left">
       <span class="item-date">2026-06-02</span>
-      <span class="item-label">AI/ML 周报 2026-06-02</span>
+      <span class="item-label">AI/ML 周报 2026-06-02 </span>
     </div>
     <a class="item-link" href="2026-06-02.html">查看 →</a>
   </div>
 
 </div>
 </div>
-
 <footer>
   <p>Powered by 🐟 小鸟游星野 · 数据来源 <a href="https://github.com">GitHub</a></p>
 </footer>
-
 </body>
 </html>
