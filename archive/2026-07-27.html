@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub AI/ML 周报 · 2026-07-27</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC","PingFang SC",sans-serif;background:linear-gradient(135deg, #7f1d1d 0%, #dc2626 40%, #ef4444 100%);min-height:100vh;color:#1a1a2e}
+.container{max-width:800px;margin:0 auto;padding:40px 20px 60px}
+header{text-align:center;padding:50px 20px 30px;color:#fff}
+header h1{font-size:2.4em;font-weight:800;text-shadow:0 2px 10px rgba(0,0,0,.15);margin-bottom:8px}
+header .date{font-size:1em;opacity:.8;margin-bottom:4px}
+header .desc{font-size:.88em;opacity:.6;max-width:500px;margin:0 auto;line-height:1.6}
+.stats-bar{display:flex;justify-content:center;gap:24px;margin:20px 0 10px;flex-wrap:wrap}
+.stat{background:rgba(255,255,255,.12);border-radius:12px;padding:10px 20px;color:#fff;text-align:center;min-width:100px}
+.stat .num{font-size:1.5em;font-weight:700}
+.stat .label{font-size:.75em;opacity:.7;margin-top:2px}
+.cards{display:flex;flex-direction:column;gap:18px;margin-top:30px}
+.card{background:rgba(255,255,255,.95);border-radius:16px;padding:24px 28px;box-shadow:0 4px 20px rgba(0,0,0,.06);border:1px solid rgba(255,255,255,.6);transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.1)}
+.card-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.card-title{font-size:1.15em;font-weight:700}
+.card-title a{color:#7e22ce;text-decoration:none}
+.card-title a:hover{text-decoration:underline}
+.card-title .rank{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#a855f7,#7e22ce);color:#fff;font-size:.75em;font-weight:700;margin-right:8px;flex-shrink:0}
+.card-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lang-tag{display:inline-block;padding:2px 10px;border-radius:20px;font-size:.75em;font-weight:600;background:#f3e8ff;color:#581c87;border:1px solid #e9d5ff}
+.star-info{font-size:.82em;color:#888}
+.star-info .plus{color:#16a34a;font-weight:600}
+.card-desc{font-size:.92em;color:#444;margin-bottom:12px;line-height:1.6}
+.card-section-title{font-size:.78em;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.features{list-style:none;padding:0}
+.features li{position:relative;padding-left:18px;font-size:.88em;color:#555;margin-bottom:4px;line-height:1.5}
+.features li::before{content:"";position:absolute;left:0;top:7px;width:8px;height:8px;border-radius:50%;background:#7e22ce}
+.scenario-tags{display:flex;flex-wrap:wrap;gap:6px}
+.scenario-tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:.75em;font-weight:500;background:#faf5ff;color:#581c87;border:1px solid #e9d5ff}
+.archive-link{display:inline-block;margin-bottom:24px;color:rgba(255,255,255,.8);text-decoration:none;font-size:.9em;font-weight:500}
+.archive-link:hover{text-decoration:underline}
+footer{text-align:center;color:rgba(255,255,255,.6);font-size:.8em;margin-top:50px;padding-top:20px;border-top:1px solid rgba(255,255,255,.15)}
+footer a{color:rgba(255,255,255,.7);text-decoration:none}
+@media(max-width:600px){.container{padding:20px 14px 40px}header h1{font-size:1.8em}.card{padding:18px 16px}.stats-bar{gap:10px}.stat{min-width:80px;padding:8px 14px}.stat .num{font-size:1.2em}}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>🔬 GitHub AI/ML 周报</h1>
+<div class="date">2026-07-27 · Weekly Trending</div>
+<div class="desc">本周 GitHub 上最热门的 AI / 机器学习开源项目精选</div>
+</header>
+
+<div class="stats-bar">
+<div class="stat"><div class="num">18</div><div class="label">入选项目</div></div>
+<div class="stat"><div class="num">92,604</div><div class="label">本周总增星</div></div>
+<div class="stat"><div class="num">5</div><div class="label">编程语言</div></div>
+</div>
+
+<a class="archive-link" href="archive/index.html">📚 历史周报合集 →</a>
+
+<div class="cards">
+
+<!-- 1 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">1</span><a href="https://github.com/bojieli/ai-agent-book" target="_blank">bojieli / ai-agent-book</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 20,834 · <span class="plus">+15,909 本周</span></span>
+</div>
+</div>
+<div class="card-desc">《深入理解 AI Agent：设计原理与工程实践》（李博杰 著）开源主仓库——全书正文、编译版 PDF 与按章配套代码，系统讲解 Agent 架构设计、工具调用、多 Agent 协作等核心主题。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>完整书籍内容开源：正文 + PDF + 分章代码，系统性学习 Agent 工程</li><li>覆盖 Agent 设计原理：工具调用、记忆管理、多 Agent 编排等核心机制</li><li>配套实践代码：可直接运行，边学边练</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">AI Agent 系统学习</span><span class="scenario-tag">Agent 工程实践</span><span class="scenario-tag">工具调用研究</span><span class="scenario-tag">多 Agent 协作</span>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">2</span><a href="https://github.com/koala73/worldmonitor" target="_blank">koala73 / worldmonitor</a></div>
+<div class="card-meta">
+<span class="lang-tag">TypeScript</span>
+<span class="star-info">⭐ 74,762 · <span class="plus">+12,615 本周</span></span>
+</div>
+</div>
+<div class="card-desc">实时全球情报仪表盘——AI 驱动的新闻动态聚合、地缘政治监控、基础设施追踪，统一态势感知界面，帮助决策者快速把握全球变化。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>AI 新闻聚合：多源新闻自动采集、去重、摘要、分类</li><li>地缘政治监控：关键事件、冲突、政策变化实时预警</li><li>基础设施追踪：能源、交通、通信等关键设施状态可视化</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">情报分析</span><span class="scenario-tag">地缘政治研究</span><span class="scenario-tag">态势感知</span><span class="scenario-tag">决策支持</span>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">3</span><a href="https://github.com/diegosouzapw/OmniRoute" target="_blank">diegosouzapw / OmniRoute</a></div>
+<div class="card-meta">
+<span class="lang-tag">TypeScript</span>
+<span class="star-info">⭐ 31,054 · <span class="plus">+10,912 本周</span></span>
+</div>
+</div>
+<div class="card-desc">免费开源 AI 网关——一个端点接入 290+ 提供商、500+ 模型（含 90+ 免费），涵盖 Kimi、Claude、GPT、Gemini、GLM、DeepSeek、MiniMax 等；配额感知自动降级、RTK+Caveman 压缩节省 15-95% tokens，支持 MCP/A2A，适配 Claude Code、Codex、Cursor 等主流工具。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>统一 AI 网关：一个端点接入 290+ 模型提供商，零配置切换</li><li>智能降级：配额感知自动 fallback，确保高可用性</li><li>token 压缩：RTK+Caveman 算法压缩 15-95% token 消耗</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">LLM API 统一管理</span><span class="scenario-tag">模型自动降级</span><span class="scenario-tag">token 成本优化</span><span class="scenario-tag">多模型并发调用</span>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">4</span><a href="https://github.com/stablyai/orca" target="_blank">stablyai / orca</a></div>
+<div class="card-meta">
+<span class="lang-tag">TypeScript</span>
+<span class="star-info">⭐ 29,731 · <span class="plus">+7,392 本周</span></span>
+</div>
+</div>
+<div class="card-desc">Orca：面向并行 Agent 编排的应用程序开发环境——在同一环境下运行任意编码 Agent，桌面/移动/VPS 全平台支持，使用自有 API 订阅。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>并行 Agent 编排：同时运行多个编码 Agent，高效协同工作</li><li>自有订阅：使用自己的 LLM API，无需依赖第三方服务</li><li>全平台：桌面、移动、VPS 多端部署</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">多 Agent 并行开发</span><span class="scenario-tag">编码 Agent 编排</span><span class="scenario-tag">自有 API 订阅</span><span class="scenario-tag">全平台 Agent 部署</span>
+</div>
+</div>
+
+<!-- 5 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">5</span><a href="https://github.com/tirth8205/code-review-graph" target="_blank">tirth8205 / code-review-graph</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 26,606 · <span class="plus">+6,006 本周</span></span>
+</div>
+</div>
+<div class="card-desc">Local-first 代码智能图谱——为 MCP 和 CLI 构建持久化的代码库映射，让 AI 编码工具只读取必要上下文，已在 Code Review 和大型仓库工作流中验证上下文压缩效果。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>本地优先：代码图谱完全本地构建，隐私安全</li><li>MCP 集成：与 Claude Code 等工具深度集成，自动注入相关上下文</li><li>上下文压缩：基准测试证明显著减少 token 消耗，提升 Code Review 效率</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">AI Code Review</span><span class="scenario-tag">大仓库上下文管理</span><span class="scenario-tag">MCP 工具开发</span><span class="scenario-tag">token 压缩</span>
+</div>
+</div>
+
+<!-- 6 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">6</span><a href="https://github.com/ruvnet/RuView" target="_blank">ruvnet / RuView</a></div>
+<div class="card-meta">
+<span class="lang-tag">Rust</span>
+<span class="star-info">⭐ 86,645 · <span class="plus">+5,497 本周</span></span>
+</div>
+</div>
+<div class="card-desc">RuView：将普通 WiFi 信号转化为实时空间智能——生命体征监测、存在感知、空间定位，无需任何视频像素，基于 WiFi 射频信号的非视觉感知方案。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>WiFi 非视觉感知：从射频信号中提取空间位置、心跳、呼吸等生理信息</li><li>实时空间智能：无需摄像头即可实现存在检测、活动追踪、生命体征监测</li><li>隐私优先：不依赖任何视觉传感器，数据完全本地处理</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">存在感知</span><span class="scenario-tag">生命体征监测</span><span class="scenario-tag">隐私保护监控</span><span class="scenario-tag">智能物联网</span>
+</div>
+</div>
+
+<!-- 7 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">7</span><a href="https://github.com/earendil-works/pi" target="_blank">earendil-works / pi</a></div>
+<div class="card-meta">
+<span class="lang-tag">TypeScript</span>
+<span class="star-info">⭐ 78,083 · <span class="plus">+5,389 本周</span></span>
+</div>
+</div>
+<div class="card-desc">AI Agent 工具包——统一 LLM API 接入、Agent 循环、TUI 交互、编码 Agent CLI，一站式 Agent 开发框架，支持多种后端模型。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>统一 LLM API：一键接入多种后端模型，无缝切换</li><li>Agent 循环：内置 Agent 执行框架，支持工具调用与记忆管理</li><li>TUI + CLI：终端界面与编码 Agent CLI 双模态支持</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">Agent 开发</span><span class="scenario-tag">LLM API 统一接入</span><span class="scenario-tag">编码 Agent CLI</span><span class="scenario-tag">工具调用框架</span>
+</div>
+</div>
+
+<!-- 8 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">8</span><a href="https://github.com/Nutlope/hallmark" target="_blank">Nutlope / hallmark</a></div>
+<div class="card-meta">
+<span class="lang-tag">CSS</span>
+<span class="star-info">⭐ 18,243 · <span class="plus">+4,932 本周</span></span>
+</div>
+</div>
+<div class="card-desc">Anti-AI-Slop 设计技能——专为 Claude Code、Cursor、Codex 等 AI 编码工具设计的 CSS/设计技能，帮助生成更有审美、更人性化的界面，摆脱千篇一律的 AI 设计风格。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>反 AI 同质化设计：打破千篇一律的 AI 生成风格，注入个性化美学</li><li>多工具兼容：Claude Code、Cursor、Codex 等 AI 编码工具开箱即用</li><li>即用型 CSS 技能：直接集成，无需额外配置</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">AI 编码工具美学提升</span><span class="scenario-tag">UI/UX 设计</span><span class="scenario-tag">反 AI 同质化</span><span class="scenario-tag">CSS 技能开发</span>
+</div>
+</div>
+
+<!-- 9 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">9</span><a href="https://github.com/rohitg00/ai-engineering-from-scratch" target="_blank">rohitg00 / ai-engineering-from-scratch</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 43,771 · <span class="plus">+4,317 本周</span></span>
+</div>
+</div>
+<div class="card-desc">从零开始学 AI 工程——学它、造它、发布它。涵盖 AI 系统从原型到生产的完整工程实践，含大量实战项目与代码示例。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>完整工程路径：从概念到原型到生产部署全流程覆盖</li><li>实战项目驱动：每个主题配套可运行的代码示例</li><li>系统覆盖：模型开发、数据管道、评估体系、部署运维</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">AI 工程学习</span><span class="scenario-tag">实战项目</span><span class="scenario-tag">生产部署</span><span class="scenario-tag">系统架构</span>
+</div>
+</div>
+
+<!-- 10 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">10</span><a href="https://github.com/every-app/open-seo" target="_blank">every-app / open-seo</a></div>
+<div class="card-meta">
+<span class="lang-tag">TypeScript</span>
+<span class="star-info">⭐ 8,243 · <span class="plus">+3,639 本周</span></span>
+</div>
+</div>
+<div class="card-desc">Semrush 和 Ahrefs 的开源替代——完整 SEO 工具箱，含关键词研究、竞争分析、排名追踪、站点审计等，AI 驱动的数据分析与报告生成。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>完整 SEO 工具链：关键词研究、竞争分析、排名追踪、站点审计</li><li>AI 驱动分析：智能生成 SEO 报告与优化建议</li><li>开源免费：替代付费 SaaS 工具，本地化部署</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">SEO 分析</span><span class="scenario-tag">关键词研究</span><span class="scenario-tag">竞争分析</span><span class="scenario-tag">营销自动化</span>
+</div>
+</div>
+
+<!-- 11 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">11</span><a href="https://github.com/1jehuang/jcode" target="_blank">1jehuang / jcode</a></div>
+<div class="card-meta">
+<span class="lang-tag">Rust</span>
+<span class="star-info">⭐ 11,668 · <span class="plus">+2,909 本周</span></span>
+</div>
+</div>
+<div class="card-desc">最智能的编码 Agent 框架——轻量、高性能的 Agent 开发套件，专为代码理解与生成设计，支持多模型后端。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>智能编码 Agent：专为代码生成与理解优化</li><li>Rust 核心：极致性能，低延迟高吞吐</li><li>多模型支持：无缝切换不同 LLM 后端</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">编码 Agent 开发</span><span class="scenario-tag">代码理解</span><span class="scenario-tag">高性能 Agent</span><span class="scenario-tag">多模型适配</span>
+</div>
+</div>
+
+<!-- 12 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">12</span><a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank">ComposioHQ / awesome-claude-skills</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 70,905 · <span class="plus">+2,820 本周</span></span>
+</div>
+</div>
+<div class="card-desc">精选 Claude Skills 资源列表——Curated 的工具集，帮助定制 Claude AI 工作流，含大量现成可复用的技能模板与资源。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>Claude Skills 精选列表：覆盖开发、自动化、分析等多领域</li><li>社区维护：持续更新，收录最新优质 Skills</li><li>即用型模板：复制即可使用，快速构建自定义 Claude Agent</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">Claude Agent 定制</span><span class="scenario-tag">Skills 资源导航</span><span class="scenario-tag">AI 工作流构建</span><span class="scenario-tag">社区技能共享</span>
+</div>
+</div>
+
+<!-- 13 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">13</span><a href="https://github.com/HKUDS/DeepTutor" target="_blank">HKUDS / DeepTutor</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 30,084 · <span class="plus">+2,199 本周</span></span>
+</div>
+</div>
+<div class="card-desc">DeepTutor：终身个性化辅导系统——基于大语言模型的教学 Agent，能够持续学习学生的知识状态，提供个性化、自适应的辅导体验。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>终身学习追踪：持续学习学生知识状态，动态调整教学策略</li><li>个性化辅导：基于学生能力曲线生成定制化学习内容</li><li>自适应对话：支持苏格拉底式提问、启发式引导等教学策略</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">AI 教育辅导</span><span class="scenario-tag">个性化学习</span><span class="scenario-tag">教学 Agent</span><span class="scenario-tag">知识追踪</span>
+</div>
+</div>
+
+<!-- 14 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">14</span><a href="https://github.com/earthtojake/text-to-cad" target="_blank">earthtojake / text-to-cad</a></div>
+<div class="card-meta">
+<span class="lang-tag">JavaScript</span>
+<span class="star-info">⭐ 10,541 · <span class="plus">+2,169 本周</span></span>
+</div>
+</div>
+<div class="card-desc">Text-to-CAD Agent 技能集合——将自然语言描述转化为 CAD 设计、机器人路径规划、硬件设计的 Agent 技能，适用于工业设计、机械工程等领域。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>自然语言转 CAD：用文字描述生成 2D/3D CAD 图纸</li><li>机器人路径规划：从描述到机器人运动轨迹自动规划</li><li>硬件设计技能：面向嵌入式、机械结构的 AI 设计能力</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">CAD 设计</span><span class="scenario-tag">机器人路径规划</span><span class="scenario-tag">硬件设计</span><span class="scenario-tag">工业设计自动化</span>
+</div>
+</div>
+
+<!-- 15 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">15</span><a href="https://github.com/agegr/pi-web" target="_blank">agegr / pi-web</a></div>
+<div class="card-meta">
+<span class="lang-tag">TypeScript</span>
+<span class="star-info">⭐ 2,874 · <span class="plus">+1,551 本周</span></span>
+</div>
+</div>
+<div class="card-desc">Web UI for the pi coding agent——为 earendil-works/pi 编码 Agent 提供浏览器界面，无需命令行即可在网页中使用 Agent 进行代码编写与项目管理。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>浏览器 UI：通过网页界面与 pi 编码 Agent 交互</li><li>零配置：无需命令行，点开即用</li><li>全功能：代码编写、文件管理、Agent 对话全支持</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">Agent Web UI</span><span class="scenario-tag">编码 Agent 可视化</span><span class="scenario-tag">浏览器端开发</span><span class="scenario-tag">协作编程</span>
+</div>
+</div>
+
+<!-- 16 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">16</span><a href="https://github.com/MoonshotAI/kimi-code" target="_blank">MoonshotAI / kimi-code</a></div>
+<div class="card-meta">
+<span class="lang-tag">TypeScript</span>
+<span class="star-info">⭐ 5,191 · <span class="plus">+1,380 本周</span></span>
+</div>
+</div>
+<div class="card-desc">Kimi Code CLI——下一代 Agent 的起点。由 Moonshot AI 官方发布的编码 Agent CLI 工具，基于 Kimi 模型，支持长上下文代码处理。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>官方编码 Agent CLI：Moonshot AI 出品，稳定可靠</li><li>长上下文：基于 Kimi 模型，支持超长代码文件处理</li><li>下一代 Agent 框架：面向未来 Agent 架构设计</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">编码 Agent</span><span class="scenario-tag">长上下文代码处理</span><span class="scenario-tag">官方工具链</span><span class="scenario-tag">CLI Agent</span>
+</div>
+</div>
+
+<!-- 17 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">17</span><a href="https://github.com/MoonshotAI/kimi-cli" target="_blank">MoonshotAI / kimi-cli</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 10,893 · <span class="plus">+1,200 本周</span></span>
+</div>
+</div>
+<div class="card-desc">Kimi Code CLI——你的下一个 CLI Agent。基于 Kimi 模型的多功能命令行 Agent，支持代码理解、文件操作、任务自动化等场景。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>多功能 CLI Agent：代码理解、文件操作、任务自动化一站式</li><li>Kimi 长上下文：处理超长代码库和文档</li><li>Python 实现：易扩展、易二次开发</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">CLI Agent</span><span class="scenario-tag">任务自动化</span><span class="scenario-tag">代码处理</span><span class="scenario-tag">文件操作</span>
+</div>
+</div>
+
+<!-- 18 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">18</span><a href="https://github.com/shiyu-coder/Kronos" target="_blank">shiyu-coder / Kronos</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 34,173 · <span class="plus">+1,768 本周</span></span>
+</div>
+</div>
+<div class="card-desc">Kronos：金融市场语言的 Foundation Model——专为金融时间序列设计的预训练基础模型，将金融数据转化为类似自然语言的结构，实现预测、异常检测等任务。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>金融 Foundation Model：将金融时间序列编码为语言结构</li><li>预训练 + 微调：大规模金融数据预训练，下游任务微调即用</li><li>多任务支持：价格预测、异常检测、风险评估等金融场景</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">金融时间序列预测</span><span class="scenario-tag">风险评估</span><span class="scenario-tag">异常检测</span><span class="scenario-tag">量化投资</span>
+</div>
+</div>
+
+</div>
+
+<footer>
+<p>Powered by 🐟 小鸟游星野 · 数据来源 <a href="https://github.com/trending?since=weekly">GitHub Trending</a></p>
+</footer>
+</div>
+</body>
+</html>
