@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub AI/ML 周报 · 2026-08-03</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC","PingFang SC",sans-serif;background:linear-gradient(135deg, #7c2d12 0%, #ea580c 40%, #fb923c 100%);min-height:100vh;color:#1a1a2e}
+.container{max-width:800px;margin:0 auto;padding:40px 20px 60px}
+header{text-align:center;padding:50px 20px 30px;color:#fff}
+header h1{font-size:2.4em;font-weight:800;text-shadow:0 2px 10px rgba(0,0,0,.15);margin-bottom:8px}
+header .date{font-size:1em;opacity:.8;margin-bottom:4px}
+header .desc{font-size:.88em;opacity:.6;max-width:500px;margin:0 auto;line-height:1.6}
+.stats-bar{display:flex;justify-content:center;gap:24px;margin:20px 0 10px;flex-wrap:wrap}
+.stat{background:rgba(255,255,255,.12);border-radius:12px;padding:10px 20px;color:#fff;text-align:center;min-width:100px}
+.stat .num{font-size:1.5em;font-weight:700}
+.stat .label{font-size:.75em;opacity:.7;margin-top:2px}
+.cards{display:flex;flex-direction:column;gap:18px;margin-top:30px}
+.card{background:rgba(255,255,255,.95);border-radius:16px;padding:24px 28px;box-shadow:0 4px 20px rgba(0,0,0,.06);border:1px solid rgba(255,255,255,.6);transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.1)}
+.card-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.card-title{font-size:1.15em;font-weight:700}
+.card-title a{color:#7e22ce;text-decoration:none}
+.card-title a:hover{text-decoration:underline}
+.card-title .rank{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#a855f7,#7e22ce);color:#fff;font-size:.75em;font-weight:700;margin-right:8px;flex-shrink:0}
+.card-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lang-tag{display:inline-block;padding:2px 10px;border-radius:20px;font-size:.75em;font-weight:600;background:#f3e8ff;color:#581c87;border:1px solid #e9d5ff}
+.star-info{font-size:.82em;color:#888}
+.star-info .plus{color:#16a34a;font-weight:600}
+.card-desc{font-size:.92em;color:#444;margin-bottom:12px;line-height:1.6}
+.card-section-title{font-size:.78em;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.features{list-style:none;padding:0}
+.features li{position:relative;padding-left:18px;font-size:.88em;color:#555;margin-bottom:4px;line-height:1.5}
+.features li::before{content:"";position:absolute;left:0;top:7px;width:8px;height:8px;border-radius:50%;background:#7e22ce}
+.scenario-tags{display:flex;flex-wrap:wrap;gap:6px}
+.scenario-tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:.75em;font-weight:500;background:#faf5ff;color:#581c87;border:1px solid #e9d5ff}
+.archive-link{display:inline-block;margin-bottom:24px;color:rgba(255,255,255,.8);text-decoration:none;font-size:.9em;font-weight:500}
+.archive-link:hover{text-decoration:underline}
+footer{text-align:center;color:rgba(255,255,255,.6);font-size:.8em;margin-top:50px;padding-top:20px;border-top:1px solid rgba(255,255,255,.15)}
+footer a{color:rgba(255,255,255,.7);text-decoration:none}
+@media(max-width:600px){.container{padding:20px 14px 40px}header h1{font-size:1.8em}.card{padding:18px 16px}.stats-bar{gap:10px}.stat{min-width:80px;padding:8px 14px}.stat .num{font-size:1.2em}}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>🔬 GitHub AI/ML 周报</h1>
+<div class="date">2026-08-03 · Weekly Trending</div>
+<div class="desc">本周 GitHub 上最热门的 AI / 机器学习开源项目精选</div>
+</header>
+
+<div class="stats-bar">
+<div class="stat"><div class="num">11</div><div class="label">入选项目</div></div>
+<div class="stat"><div class="num">49,430</div><div class="label">本周总增星</div></div>
+<div class="stat"><div class="num">5</div><div class="label">编程语言</div></div>
+</div>
+
+<a class="archive-link" href="archive/index.html">📚 历史周报合集 →</a>
+
+<div class="cards">
+
+<!-- 1 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">1</span><a href="https://github.com/bojieli/ai-agent-book" target="_blank">bojieli / ai-agent-book</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 29,923 · <span class="plus">+9,298 本周</span></span>
+</div>
+</div>
+<div class="card-desc">《深入理解 AI Agent：设计原理与工程实践》（李博杰 著）开源主仓库——全书正文、编译版 PDF 与按章配套代码，系统讲解 Agent 架构设计、工具调用、多 Agent 协作等核心主题。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>完整书籍内容开源：正文 + PDF + 分章代码，系统性学习 Agent 工程</li><li>覆盖 Agent 设计原理：工具调用、记忆管理、多 Agent 编排等核心机制</li><li>配套实践代码：可直接运行，边学边练</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">AI Agent 系统学习</span><span class="scenario-tag">Agent 工程实践</span><span class="scenario-tag">工具调用研究</span><span class="scenario-tag">多 Agent 协作</span>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">2</span><a href="https://github.com/diegosouzapw/OmniRoute" target="_blank">diegosouzapw / OmniRoute</a></div>
+<div class="card-meta">
+<span class="lang-tag">TypeScript</span>
+<span class="star-info">⭐ 37,911 · <span class="plus">+7,141 本周</span></span>
+</div>
+</div>
+<div class="card-desc">免费开源 AI 网关——一个端点接入 290+ 提供商、500+ 模型（含 90+ 免费），涵盖 Kimi、Claude、GPT、Gemini、GLM、DeepSeek、MiniMax 等；配额感知自动降级、RTK+Caveman 压缩节省 15-95% tokens，支持 MCP/A2A，适配 Claude Code、Codex、Cursor 等主流工具。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>统一 AI 网关：一个端点接入 290+ 模型提供商，零配置切换</li><li>智能降级：配额感知自动 fallback，确保高可用性</li><li>token 压缩：RTK+Caveman 算法压缩 15-95% token 消耗</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">LLM API 统一管理</span><span class="scenario-tag">模型自动降级</span><span class="scenario-tag">token 成本优化</span><span class="scenario-tag">多模型并发调用</span>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">3</span><a href="https://github.com/microsoft/AI-For-Beginners" target="_blank">microsoft / AI-For-Beginners</a></div>
+<div class="card-meta">
+<span class="lang-tag">Jupyter Notebook</span>
+<span class="star-info">⭐ 59,039 · <span class="plus">+5,601 本周</span></span>
+</div>
+</div>
+<div class="card-desc">微软官方出品的 AI 入门课程——12 周、24 课时，覆盖机器学习、深度学习、NLP、计算机视觉、生成式 AI 等核心领域，配套 Jupyter Notebook 实战代码，适合零基础系统入门。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>系统化课程：12 周 24 课时，从 ML 基础到生成式 AI 全覆盖</li><li>实战代码：每课配套 Jupyter Notebook，可直接运行实验</li><li>微软官方维护：内容权威、持续更新，支持中文等多语言</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">AI 零基础入门</span><span class="scenario-tag">系统化学习路径</span><span class="scenario-tag">教学课程资源</span><span class="scenario-tag">实战代码参考</span>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">4</span><a href="https://github.com/ayghri/i-have-adhd" target="_blank">ayghri / i-have-adhd</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 15,693 · <span class="plus">+5,225 本周</span></span>
+</div>
+</div>
+<div class="card-desc">防止编码 Agent "掩盖答案" 的技能——针对 AI 编码助手输出过于冗长、关键信息被淹没的问题，强制 Agent 先给结论、再展开细节，适合注意力易分散的开发者。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>结论先行：强制 Agent 先输出核心答案，再展开解释</li><li>ADHD 友好：减少认知负荷，关键信息一眼可见</li><li>可配置：支持自定义输出模板、详细程度、代码/文本比例</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">编码 Agent 输出优化</span><span class="scenario-tag">注意力友好交互</span><span class="scenario-tag">关键信息提取</span><span class="scenario-tag">开发效率提升</span>
+</div>
+</div>
+
+<!-- 5 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">5</span><a href="https://github.com/virgiliojr94/book-to-skill" target="_blank">virgiliojr94 / book-to-skill</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 15,363 · <span class="plus">+5,223 本周</span></span>
+</div>
+</div>
+<div class="card-desc">将任意技术书籍 PDF 转化为 Claude Code Skill——自动提取书籍知识，生成结构化的技能文件，让 AI 编码助手在编程时能随时调用书中的知识、最佳实践和代码模式。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>PDF 转 Skill：自动解析技术书籍，生成 Claude Code 可用的技能文件</li><li>知识索引：提取核心概念、代码模式、最佳实践，建立可检索知识库</li><li>即时调用：编码时 AI 助手可直接引用书籍知识，无需人工查阅</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">技术书籍知识提取</span><span class="scenario-tag">Claude Code 技能构建</span><span class="scenario-tag">编码知识管理</span><span class="scenario-tag">AI 辅助学习</span>
+</div>
+</div>
+
+<!-- 6 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">6</span><a href="https://github.com/alibaba/open-code-review" target="_blank">alibaba / open-code-review</a></div>
+<div class="card-meta">
+<span class="lang-tag">Go</span>
+<span class="star-info">⭐ 17,891 · <span class="plus">+4,365 本周</span></span>
+</div>
+</div>
+<div class="card-desc">阿里巴巴开源的代码审查工具——混合架构：确定性流水线 + LLM Agent，支持精确到行级的评论，已在阿里巴巴大规模生产环境验证。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>混合架构：确定性静态分析 + LLM 智能审查，兼顾准确性与灵活性</li><li>行级评论：精确定位代码行，给出具体修改建议</li><li>生产验证：阿里巴巴内部大规模使用，稳定性经受考验</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">自动化代码审查</span><span class="scenario-tag">CI/CD 集成</span><span class="scenario-tag">代码质量把关</span><span class="scenario-tag">团队协作规范</span>
+</div>
+</div>
+
+<!-- 7 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">7</span><a href="https://github.com/citrolabs/ego-lite" target="_blank">citrolabs / ego-lite</a></div>
+<div class="card-meta">
+<span class="lang-tag">JavaScript</span>
+<span class="star-info">⭐ 7,675 · <span class="plus">+3,582 本周</span></span>
+</div>
+</div>
+<div class="card-desc">专为 AI Agent 设计的极速浏览器——支持共享已登录的浏览器状态给 Codex、Claude Code 等编码 Agent，让 Agent 直接在真实浏览器环境中执行自动化任务。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>状态共享：将人类已登录的浏览器会话直接传递给 AI Agent</li><li>极速执行：轻量级架构，专为 Agent 自动化优化</li><li>兼容主流 Agent：开箱即用支持 Codex、Claude Code 等</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">Agent 浏览器自动化</span><span class="scenario-tag">登录态共享</span><span class="scenario-tag">Web 自动化测试</span><span class="scenario-tag">数据采集</span>
+</div>
+</div>
+
+<!-- 8 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">8</span><a href="https://github.com/moeru-ai/airi" target="_blank">moeru-ai / airi</a></div>
+<div class="card-meta">
+<span class="lang-tag">TypeScript</span>
+<span class="star-info">⭐ 46,546 · <span class="plus">+3,431 本周</span></span>
+</div>
+</div>
+<div class="card-desc">自托管的 AI 陪伴应用——"赛博灵魂容器"，让用户创建、养成、互动个性化的 AI 角色，支持长期记忆、情感模拟、多模态交互，致力于实现类 Neuro-sama 的陪伴体验。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>角色养成：创建个性化 AI 角色，支持人设、记忆、性格演化</li><li>长期记忆：持久化存储交互历史，实现跨会话的连续性陪伴</li><li>多模态交互：文本、语音、表情、动作多通道交互</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">AI 陪伴应用</span><span class="scenario-tag">角色扮演</span><span class="scenario-tag">长期记忆 Agent</span><span class="scenario-tag">情感计算研究</span>
+</div>
+</div>
+
+<!-- 9 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">9</span><a href="https://github.com/different-ai/openwork" target="_blank">different-ai / openwork</a></div>
+<div class="card-meta">
+<span class="lang-tag">TypeScript</span>
+<span class="star-info">⭐ 20,319 · <span class="plus">+2,925 本周</span></span>
+</div>
+</div>
+<div class="card-desc">Claude Cowork 的开源替代——基于 opencode 构建，提供协作式 AI 编程环境，支持多人实时协作、共享上下文、分支式对话历史。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>协作式编程：多人同时与 AI 协作，共享上下文与对话历史</li><li>分支式对话：像 Git 一样管理对话分支，探索不同方案互不干扰</li><li>开源自托管：数据完全可控，无需依赖商业 SaaS</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">团队 AI 协作编程</span><span class="scenario-tag">共享上下文开发</span><span class="scenario-tag">对话版本管理</span><span class="scenario-tag">自托管 AI 环境</span>
+</div>
+</div>
+
+<!-- 10 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">10</span><a href="https://github.com/earthtojake/text-to-cad" target="_blank">earthtojake / text-to-cad</a></div>
+<div class="card-meta">
+<span class="lang-tag">JavaScript</span>
+<span class="star-info">⭐ 12,522 · <span class="plus">+2,063 本周</span></span>
+</div>
+</div>
+<div class="card-desc">Text-to-CAD Agent 技能集合——将自然语言描述转化为 CAD 设计、机器人路径规划、硬件设计的 Agent 技能，适用于工业设计、机械工程等领域。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>自然语言转 CAD：用文字描述生成 2D/3D CAD 图纸</li><li>机器人路径规划：从描述到机器人运动轨迹自动规划</li><li>硬件设计技能：面向嵌入式、机械结构的 AI 设计能力</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">CAD 设计</span><span class="scenario-tag">机器人路径规划</span><span class="scenario-tag">硬件设计</span><span class="scenario-tag">工业设计自动化</span>
+</div>
+</div>
+
+<!-- 11 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">11</span><a href="https://github.com/andrewyng/aisuite" target="_blank">andrewyng / aisuite</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 15,901 · <span class="plus">+576 本周</span></span>
+</div>
+</div>
+<div class="card-desc">简单统一的生成式 AI 多提供商接口——统一 OpenAI、Anthropic、Google、Cohere、Ollama 等十余家提供商的调用接口，一行代码切换模型，极简依赖。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>统一接口：一套 API 调用 10+ 主流模型提供商</li><li>极简依赖：零重度依赖，安装体积小，易集成</li><li>自动适配：自动处理不同提供商的参数差异、流式响应</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">多模型统一调用</span><span class="scenario-tag">模型快速切换测试</span><span class="scenario-tag">避免厂商锁定</span><span class="scenario-tag">LLM 应用开发</span>
+</div>
+</div>
+
+</div>
+
+<footer>
+<p>Powered by 🐟 小鸟游星野 · 数据来源 <a href="https://github.com/trending?since=weekly">GitHub Trending</a></p>
+</footer>
+</div>
+</body>
+</html>
