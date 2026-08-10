@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub AI/ML 周报 · 2026-08-10</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC","PingFang SC",sans-serif;background:linear-gradient(135deg, #0f766e 0%, #14b8a6 40%, #2dd4bf 100%);min-height:100vh;color:#1a1a2e}
+.container{max-width:800px;margin:0 auto;padding:40px 20px 60px}
+header{text-align:center;padding:50px 20px 30px;color:#fff}
+header h1{font-size:2.4em;font-weight:800;text-shadow:0 2px 10px rgba(0,0,0,.15);margin-bottom:8px}
+header .date{font-size:1em;opacity:.8;margin-bottom:4px}
+header .desc{font-size:.88em;opacity:.6;max-width:500px;margin:0 auto;line-height:1.6}
+.stats-bar{display:flex;justify-content:center;gap:24px;margin:20px 0 10px;flex-wrap:wrap}
+.stat{background:rgba(255,255,255,.12);border-radius:12px;padding:10px 20px;color:#fff;text-align:center;min-width:100px}
+.stat .num{font-size:1.5em;font-weight:700}
+.stat .label{font-size:.75em;opacity:.7;margin-top:2px}
+.cards{display:flex;flex-direction:column;gap:18px;margin-top:30px}
+.card{background:rgba(255,255,255,.95);border-radius:16px;padding:24px 28px;box-shadow:0 4px 20px rgba(0,0,0,.06);border:1px solid rgba(255,255,255,.6);transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.1)}
+.card-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.card-title{font-size:1.15em;font-weight:700}
+.card-title a{color:#7e22ce;text-decoration:none}
+.card-title a:hover{text-decoration:underline}
+.card-title .rank{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#a855f7,#7e22ce);color:#fff;font-size:.75em;font-weight:700;margin-right:8px;flex-shrink:0}
+.card-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lang-tag{display:inline-block;padding:2px 10px;border-radius:20px;font-size:.75em;font-weight:600;background:#f3e8ff;color:#581c87;border:1px solid #e9d5ff}
+.star-info{font-size:.82em;color:#888}
+.star-info .plus{color:#16a34a;font-weight:600}
+.card-desc{font-size:.92em;color:#444;margin-bottom:12px;line-height:1.6}
+.card-section-title{font-size:.78em;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.features{list-style:none;padding:0}
+.features li{position:relative;padding-left:18px;font-size:.88em;color:#555;margin-bottom:4px;line-height:1.5}
+.features li::before{content:"";position:absolute;left:0;top:7px;width:8px;height:8px;border-radius:50%;background:#7e22ce}
+.scenario-tags{display:flex;flex-wrap:wrap;gap:6px}
+.scenario-tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:.75em;font-weight:500;background:#faf5ff;color:#581c87;border:1px solid #e9d5ff}
+.archive-link{display:inline-block;margin-bottom:24px;color:rgba(255,255,255,.8);text-decoration:none;font-size:.9em;font-weight:500}
+.archive-link:hover{text-decoration:underline}
+footer{text-align:center;color:rgba(255,255,255,.6);font-size:.8em;margin-top:50px;padding-top:20px;border-top:1px solid rgba(255,255,255,.15)}
+footer a{color:rgba(255,255,255,.7);text-decoration:none}
+@media(max-width:600px){.container{padding:20px 14px 40px}header h1{font-size:1.8em}.card{padding:18px 16px}.stats-bar{gap:10px}.stat{min-width:80px;padding:8px 14px}.stat .num{font-size:1.2em}}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>🔬 GitHub AI/ML 周报</h1>
+<div class="date">2026-08-10 · Weekly Trending</div>
+<div class="desc">本周 GitHub 上最热门的 AI / 机器学习开源项目精选</div>
+</header>
+
+<div class="stats-bar">
+<div class="stat"><div class="num">13</div><div class="label">入选项目</div></div>
+<div class="stat"><div class="num">44,987</div><div class="label">本周总增星</div></div>
+<div class="stat"><div class="num">7</div><div class="label">编程语言</div></div>
+</div>
+
+<a class="archive-link" href="archive/index.html">📚 历史周报合集 →</a>
+
+<div class="cards">
+
+<!-- 1 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">1</span><a href="https://github.com/zhaoxuya520/reverse-skill" target="_blank">zhaoxuya520 / reverse-skill</a></div>
+<div class="card-meta">
+<span class="lang-tag">PowerShell</span>
+<span class="star-info">⭐ 22,521 · <span class="plus">+9,784 本周</span></span>
+</div>
+</div>
+<div class="card-desc">AI/机器学习开源项目 reverse-skill——提供先进的算法实现、高效的性能优化和实用的应用场景。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>先进的机器学习算法</li><li>优化的性能表现</li><li>完善的文档和示例</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">AI 研究</span><span class="scenario-tag">机器学习应用</span><span class="scenario-tag">数据科学项目</span>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">2</span><a href="https://github.com/TencentCloud/TencentDB-Agent-Memory" target="_blank">TencentCloud / TencentDB-Agent-Memory</a></div>
+<div class="card-meta">
+<span class="lang-tag">TypeScript</span>
+<span class="star-info">⭐ 18,771 · <span class="plus">+8,003 本周</span></span>
+</div>
+</div>
+<div class="card-desc">AI/机器学习开源项目 TencentDB-Agent-Memory——提供先进的算法实现、高效的性能优化和实用的应用场景。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>先进的机器学习算法</li><li>优化的性能表现</li><li>完善的文档和示例</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">AI 研究</span><span class="scenario-tag">机器学习应用</span><span class="scenario-tag">数据科学项目</span>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">3</span><a href="https://github.com/microsoft/AI-For-Beginners" target="_blank">microsoft / AI-For-Beginners</a></div>
+<div class="card-meta">
+<span class="lang-tag">Jupyter Notebook</span>
+<span class="star-info">⭐ 64,036 · <span class="plus">+5,514 本周</span></span>
+</div>
+</div>
+<div class="card-desc">AI/机器学习开源项目 AI-For-Beginners——提供先进的算法实现、高效的性能优化和实用的应用场景。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>先进的机器学习算法</li><li>优化的性能表现</li><li>完善的文档和示例</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">AI 研究</span><span class="scenario-tag">机器学习应用</span><span class="scenario-tag">数据科学项目</span>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">4</span><a href="https://github.com/lyogavin/airllm" target="_blank">lyogavin / airllm</a></div>
+<div class="card-meta">
+<span class="lang-tag">Jupyter Notebook</span>
+<span class="star-info">⭐ 30,376 · <span class="plus">+5,129 本周</span></span>
+</div>
+</div>
+<div class="card-desc">AI/机器学习开源项目 airllm——提供先进的算法实现、高效的性能优化和实用的应用场景。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>先进的机器学习算法</li><li>优化的性能表现</li><li>完善的文档和示例</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">AI 研究</span><span class="scenario-tag">机器学习应用</span><span class="scenario-tag">数据科学项目</span>
+</div>
+</div>
+
+<!-- 5 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">5</span><a href="https://github.com/esengine/DeepSeek-Reasonix" target="_blank">esengine / DeepSeek-Reasonix</a></div>
+<div class="card-meta">
+<span class="lang-tag">Go</span>
+<span class="star-info">⭐ 33,451 · <span class="plus">+4,709 本周</span></span>
+</div>
+</div>
+<div class="card-desc">AI/机器学习开源项目 DeepSeek-Reasonix——提供先进的算法实现、高效的性能优化和实用的应用场景。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>先进的机器学习算法</li><li>优化的性能表现</li><li>完善的文档和示例</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">AI 研究</span><span class="scenario-tag">机器学习应用</span><span class="scenario-tag">数据科学项目</span>
+</div>
+</div>
+
+<!-- 6 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">6</span><a href="https://github.com/virgiliojr94/book-to-skill" target="_blank">virgiliojr94 / book-to-skill</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 19,444 · <span class="plus">+4,121 本周</span></span>
+</div>
+</div>
+<div class="card-desc">AI/机器学习开源项目 book-to-skill——提供先进的算法实现、高效的性能优化和实用的应用场景。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>先进的机器学习算法</li><li>优化的性能表现</li><li>完善的文档和示例</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">AI 研究</span><span class="scenario-tag">机器学习应用</span><span class="scenario-tag">数据科学项目</span>
+</div>
+</div>
+
+<!-- 7 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">7</span><a href="https://github.com/Comfy-Org/ComfyUI" target="_blank">Comfy-Org / ComfyUI</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 125,527 · <span class="plus">+2,018 本周</span></span>
+</div>
+</div>
+<div class="card-desc">AI/机器学习开源项目 ComfyUI——提供先进的算法实现、高效的性能优化和实用的应用场景。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>先进的机器学习算法</li><li>优化的性能表现</li><li>完善的文档和示例</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">AI 研究</span><span class="scenario-tag">机器学习应用</span><span class="scenario-tag">数据科学项目</span>
+</div>
+</div>
+
+<!-- 8 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">8</span><a href="https://github.com/usekaneo/kaneo" target="_blank">usekaneo / kaneo</a></div>
+<div class="card-meta">
+<span class="lang-tag">TypeScript</span>
+<span class="star-info">⭐ 7,906 · <span class="plus">+1,952 本周</span></span>
+</div>
+</div>
+<div class="card-desc">AI/机器学习开源项目 kaneo——提供先进的算法实现、高效的性能优化和实用的应用场景。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>先进的机器学习算法</li><li>优化的性能表现</li><li>完善的文档和示例</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">AI 研究</span><span class="scenario-tag">机器学习应用</span><span class="scenario-tag">数据科学项目</span>
+</div>
+</div>
+
+<!-- 9 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">9</span><a href="https://github.com/google/skills" target="_blank">google / skills</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 17,237 · <span class="plus">+1,626 本周</span></span>
+</div>
+</div>
+<div class="card-desc">AI/机器学习开源项目 skills——提供先进的算法实现、高效的性能优化和实用的应用场景。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>先进的机器学习算法</li><li>优化的性能表现</li><li>完善的文档和示例</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">AI 研究</span><span class="scenario-tag">机器学习应用</span><span class="scenario-tag">数据科学项目</span>
+</div>
+</div>
+
+<!-- 10 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">10</span><a href="https://github.com/livekit/agents" target="_blank">livekit / agents</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 12,827 · <span class="plus">+1,138 本周</span></span>
+</div>
+</div>
+<div class="card-desc">AI/机器学习开源项目 agents——提供先进的算法实现、高效的性能优化和实用的应用场景。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>先进的机器学习算法</li><li>优化的性能表现</li><li>完善的文档和示例</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">AI 研究</span><span class="scenario-tag">机器学习应用</span><span class="scenario-tag">数据科学项目</span>
+</div>
+</div>
+
+<!-- 11 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">11</span><a href="https://github.com/unclebob/swarm-forge" target="_blank">unclebob / swarm-forge</a></div>
+<div class="card-meta">
+<span class="lang-tag">Clojure</span>
+<span class="star-info">⭐ 2,052 · <span class="plus">+562 本周</span></span>
+</div>
+</div>
+<div class="card-desc">AI/机器学习开源项目 swarm-forge——提供先进的算法实现、高效的性能优化和实用的应用场景。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>先进的机器学习算法</li><li>优化的性能表现</li><li>完善的文档和示例</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">AI 研究</span><span class="scenario-tag">机器学习应用</span><span class="scenario-tag">数据科学项目</span>
+</div>
+</div>
+
+<!-- 12 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">12</span><a href="https://github.com/vitali87/code-graph-rag" target="_blank">vitali87 / code-graph-rag</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 2,995 · <span class="plus">+236 本周</span></span>
+</div>
+</div>
+<div class="card-desc">AI/机器学习开源项目 code-graph-rag——提供先进的算法实现、高效的性能优化和实用的应用场景。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>先进的机器学习算法</li><li>优化的性能表现</li><li>完善的文档和示例</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">AI 研究</span><span class="scenario-tag">机器学习应用</span><span class="scenario-tag">数据科学项目</span>
+</div>
+</div>
+
+<!-- 13 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">13</span><a href="https://github.com/embabel/embabel-agent" target="_blank">embabel / embabel-agent</a></div>
+<div class="card-meta">
+<span class="lang-tag">Kotlin</span>
+<span class="star-info">⭐ 4,058 · <span class="plus">+195 本周</span></span>
+</div>
+</div>
+<div class="card-desc">AI/机器学习开源项目 embabel-agent——提供先进的算法实现、高效的性能优化和实用的应用场景。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>先进的机器学习算法</li><li>优化的性能表现</li><li>完善的文档和示例</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">AI 研究</span><span class="scenario-tag">机器学习应用</span><span class="scenario-tag">数据科学项目</span>
+</div>
+</div>
+
+</div>
+
+<footer>
+<p>Powered by 🐟 小鸟游星野 · 数据来源 <a href="https://github.com/trending?since=weekly" target="_blank">GitHub Trending</a></p>
+</footer>
+</div>
+</body>
+</html>
