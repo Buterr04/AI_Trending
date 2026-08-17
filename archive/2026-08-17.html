@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub AI/ML 周报 · 2026-08-17</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC","PingFang SC",sans-serif;background:linear-gradient(135deg, #7c2d12 0%, #ea580c 40%, #fb923c 100%);min-height:100vh;color:#1a1a2e}
+.container{max-width:800px;margin:0 auto;padding:40px 20px 60px}
+header{text-align:center;padding:50px 20px 30px;color:#fff}
+header h1{font-size:2.4em;font-weight:800;text-shadow:0 2px 10px rgba(0,0,0,.15);margin-bottom:8px}
+header .date{font-size:1em;opacity:.8;margin-bottom:4px}
+header .desc{font-size:.88em;opacity:.6;max-width:500px;margin:0 auto;line-height:1.6}
+.stats-bar{display:flex;justify-content:center;gap:24px;margin:20px 0 10px;flex-wrap:wrap}
+.stat{background:rgba(255,255,255,.12);border-radius:12px;padding:10px 20px;color:#fff;text-align:center;min-width:100px}
+.stat .num{font-size:1.5em;font-weight:700}
+.stat .label{font-size:.75em;opacity:.7;margin-top:2px}
+.cards{display:flex;flex-direction:column;gap:18px;margin-top:30px}
+.card{background:rgba(255,255,255,.95);border-radius:16px;padding:24px 28px;box-shadow:0 4px 20px rgba(0,0,0,.06);border:1px solid rgba(255,255,255,.6);transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.1)}
+.card-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.card-title{font-size:1.15em;font-weight:700}
+.card-title a{color:#7e22ce;text-decoration:none}
+.card-title a:hover{text-decoration:underline}
+.card-title .rank{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#a855f7,#7e22ce);color:#fff;font-size:.75em;font-weight:700;margin-right:8px;flex-shrink:0}
+.card-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lang-tag{display:inline-block;padding:2px 10px;border-radius:20px;font-size:.75em;font-weight:600;background:#f3e8ff;color:#581c87;border:1px solid #e9d5ff}
+.star-info{font-size:.82em;color:#888}
+.star-info .plus{color:#16a34a;font-weight:600}
+.card-desc{font-size:.92em;color:#444;margin-bottom:12px;line-height:1.6}
+.card-section-title{font-size:.78em;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.features{list-style:none;padding:0}
+.features li{position:relative;padding-left:18px;font-size:.88em;color:#555;margin-bottom:4px;line-height:1.5}
+.features li::before{content:"";position:absolute;left:0;top:7px;width:8px;height:8px;border-radius:50%;background:#7e22ce}
+.scenario-tags{display:flex;flex-wrap:wrap;gap:6px}
+.scenario-tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:.75em;font-weight:500;background:#faf5ff;color:#581c87;border:1px solid #e9d5ff}
+.archive-link{display:inline-block;margin-bottom:24px;color:rgba(255,255,255,.8);text-decoration:none;font-size:.9em;font-weight:500}
+.archive-link:hover{text-decoration:underline}
+footer{text-align:center;color:rgba(255,255,255,.6);font-size:.8em;margin-top:50px;padding-top:20px;border-top:1px solid rgba(255,255,255,.15)}
+footer a{color:rgba(255,255,255,.7);text-decoration:none}
+@media(max-width:600px){.container{padding:20px 14px 40px}header h1{font-size:1.8em}.card{padding:18px 16px}.stats-bar{gap:10px}.stat{min-width:80px;padding:8px 14px}.stat .num{font-size:1.2em}}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>🔬 GitHub AI/ML 周报</h1>
+<div class="date">2026-08-17 · Weekly Trending</div>
+<div class="desc">本周 GitHub 上最热门的 AI / 机器学习开源项目精选</div>
+</header>
+
+<div class="stats-bar">
+<div class="stat"><div class="num">13</div><div class="label">入选项目</div></div>
+<div class="stat"><div class="num">47,993</div><div class="label">本周总增星</div></div>
+<div class="stat"><div class="num">5</div><div class="label">编程语言</div></div>
+</div>
+
+<a class="archive-link" href="archive/index.html">📚 历史周报合集 →</a>
+
+<div class="cards">
+
+<!-- 1 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">1</span><a href="https://github.com/cathrynlavery/diagram-design" target="_blank">cathrynlavery / diagram-design</a></div>
+<div class="card-meta">
+<span class="lang-tag">HTML</span>
+<span class="star-info">⭐ 19,529 · <span class="plus">+15,600 本周</span></span>
+</div>
+</div>
+<div class="card-desc">开源项目 diagram-design：提供实用的技术解决方案与工具，帮助开发者提升工作效率。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>功能完整：实现核心功能，满足典型使用需求</li><li>代码质量：遵循良好编程实践，易于维护和扩展</li><li>社区支持：活跃的开发社区和持续的功能更新</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">开发工具</span><span class="scenario-tag">系统集成</span><span class="scenario-tag">自动化脚本</span><span class="scenario-tag">学习参考</span>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">2</span><a href="https://github.com/PrimeIntellect-ai/prime-agent" target="_blank">PrimeIntellect-ai / prime-agent</a></div>
+<div class="card-meta">
+<span class="lang-tag">TypeScript</span>
+<span class="star-info">⭐ 16,572 · <span class="plus">+6,435 本周</span></span>
+</div>
+</div>
+<div class="card-desc">prime-agent：智能体框架与工具系统——帮助开发者构建具备自主决策和学习能力的AI应用。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>智能体核心架构：支持状态管理、工具调用、推理决策</li><li>多智能体协调：支持多个智能体之间的通信与协作</li><li>易用集成：提供简洁API和丰富的示例代码</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">自动化任务</span><span class="scenario-tag">智能客服</span><span class="scenario-tag">数据分析</span><span class="scenario-tag">代码辅助</span>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">3</span><a href="https://github.com/semantica-agi/semantica" target="_blank">semantica-agi / semantica</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 8,185 · <span class="plus">+5,284 本周</span></span>
+</div>
+</div>
+<div class="card-desc">开源项目 semantica：提供实用的技术解决方案与工具，帮助开发者提升工作效率。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>功能完整：实现核心功能，满足典型使用需求</li><li>代码质量：遵循良好编程实践，易于维护和扩展</li><li>社区支持：活跃的开发社区和持续的功能更新</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">开发工具</span><span class="scenario-tag">系统集成</span><span class="scenario-tag">自动化脚本</span><span class="scenario-tag">学习参考</span>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">4</span><a href="https://github.com/TencentCloud/TencentDB-Agent-Memory" target="_blank">TencentCloud / TencentDB-Agent-Memory</a></div>
+<div class="card-meta">
+<span class="lang-tag">TypeScript</span>
+<span class="star-info">⭐ 22,232 · <span class="plus">+3,637 本周</span></span>
+</div>
+</div>
+<div class="card-desc">TencentDB-Agent-Memory：专为大语言模型设计的记忆增强系统——提供长期记忆、上下文管理和知识持久化能力。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>向量化记忆存储：利用向量数据库实现高效的知识检索</li><li>记忆压缩与索引：智能压缩长上下文，保持关键信息</li><li>多模态记忆支持：支持文本、图像、代码等多种记忆类型</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">长对话系统</span><span class="scenario-tag">知识库增强</span><span class="scenario-tag">个性化AI助手</span><span class="scenario-tag">多轮对话管理</span>
+</div>
+</div>
+
+<!-- 5 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">5</span><a href="https://github.com/addyosmani/agent-skills" target="_blank">addyosmani / agent-skills</a></div>
+<div class="card-meta">
+<span class="lang-tag">JavaScript</span>
+<span class="star-info">⭐ 87,761 · <span class="plus">+2,882 本周</span></span>
+</div>
+</div>
+<div class="card-desc">agent-skills：智能体框架与工具系统——帮助开发者构建具备自主决策和学习能力的AI应用。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>智能体核心架构：支持状态管理、工具调用、推理决策</li><li>多智能体协调：支持多个智能体之间的通信与协作</li><li>易用集成：提供简洁API和丰富的示例代码</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">自动化任务</span><span class="scenario-tag">智能客服</span><span class="scenario-tag">数据分析</span><span class="scenario-tag">代码辅助</span>
+</div>
+</div>
+
+<!-- 6 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">6</span><a href="https://github.com/unslothai/unsloth" target="_blank">unslothai / unsloth</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 72,585 · <span class="plus">+2,645 本周</span></span>
+</div>
+</div>
+<div class="card-desc">开源项目 unsloth：提供实用的技术解决方案与工具，帮助开发者提升工作效率。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>功能完整：实现核心功能，满足典型使用需求</li><li>代码质量：遵循良好编程实践，易于维护和扩展</li><li>社区支持：活跃的开发社区和持续的功能更新</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">开发工具</span><span class="scenario-tag">系统集成</span><span class="scenario-tag">自动化脚本</span><span class="scenario-tag">学习参考</span>
+</div>
+</div>
+
+<!-- 7 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">7</span><a href="https://github.com/macro-inc/macro" target="_blank">macro-inc / macro</a></div>
+<div class="card-meta">
+<span class="lang-tag">Rust</span>
+<span class="star-info">⭐ 3,407 · <span class="plus">+2,588 本周</span></span>
+</div>
+</div>
+<div class="card-desc">开源项目 macro：提供实用的技术解决方案与工具，帮助开发者提升工作效率。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>功能完整：实现核心功能，满足典型使用需求</li><li>代码质量：遵循良好编程实践，易于维护和扩展</li><li>社区支持：活跃的开发社区和持续的功能更新</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">开发工具</span><span class="scenario-tag">系统集成</span><span class="scenario-tag">自动化脚本</span><span class="scenario-tag">学习参考</span>
+</div>
+</div>
+
+<!-- 8 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">8</span><a href="https://github.com/paperclipai/paperclip" target="_blank">paperclipai / paperclip</a></div>
+<div class="card-meta">
+<span class="lang-tag">TypeScript</span>
+<span class="star-info">⭐ 78,512 · <span class="plus">+2,499 本周</span></span>
+</div>
+</div>
+<div class="card-desc">开源项目 paperclip：提供实用的技术解决方案与工具，帮助开发者提升工作效率。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>功能完整：实现核心功能，满足典型使用需求</li><li>代码质量：遵循良好编程实践，易于维护和扩展</li><li>社区支持：活跃的开发社区和持续的功能更新</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">开发工具</span><span class="scenario-tag">系统集成</span><span class="scenario-tag">自动化脚本</span><span class="scenario-tag">学习参考</span>
+</div>
+</div>
+
+<!-- 9 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">9</span><a href="https://github.com/vitali87/code-graph-rag" target="_blank">vitali87 / code-graph-rag</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 4,429 · <span class="plus">+1,686 本周</span></span>
+</div>
+</div>
+<div class="card-desc">开源项目 code-graph-rag：提供实用的技术解决方案与工具，帮助开发者提升工作效率。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>功能完整：实现核心功能，满足典型使用需求</li><li>代码质量：遵循良好编程实践，易于维护和扩展</li><li>社区支持：活跃的开发社区和持续的功能更新</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">开发工具</span><span class="scenario-tag">系统集成</span><span class="scenario-tag">自动化脚本</span><span class="scenario-tag">学习参考</span>
+</div>
+</div>
+
+<!-- 10 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">10</span><a href="https://github.com/ToolJet/ToolJet" target="_blank">ToolJet / ToolJet</a></div>
+<div class="card-meta">
+<span class="lang-tag">JavaScript</span>
+<span class="star-info">⭐ 40,033 · <span class="plus">+1,518 本周</span></span>
+</div>
+</div>
+<div class="card-desc">开源项目 ToolJet：提供实用的技术解决方案与工具，帮助开发者提升工作效率。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>功能完整：实现核心功能，满足典型使用需求</li><li>代码质量：遵循良好编程实践，易于维护和扩展</li><li>社区支持：活跃的开发社区和持续的功能更新</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">开发工具</span><span class="scenario-tag">系统集成</span><span class="scenario-tag">自动化脚本</span><span class="scenario-tag">学习参考</span>
+</div>
+</div>
+
+<!-- 11 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">11</span><a href="https://github.com/NVIDIA-NeMo/Switchyard" target="_blank">NVIDIA-NeMo / Switchyard</a></div>
+<div class="card-meta">
+<span class="lang-tag">Rust</span>
+<span class="star-info">⭐ 1,687 · <span class="plus">+1,435 本周</span></span>
+</div>
+</div>
+<div class="card-desc">开源项目 Switchyard：提供实用的技术解决方案与工具，帮助开发者提升工作效率。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>功能完整：实现核心功能，满足典型使用需求</li><li>代码质量：遵循良好编程实践，易于维护和扩展</li><li>社区支持：活跃的开发社区和持续的功能更新</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">开发工具</span><span class="scenario-tag">系统集成</span><span class="scenario-tag">自动化脚本</span><span class="scenario-tag">学习参考</span>
+</div>
+</div>
+
+<!-- 12 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">12</span><a href="https://github.com/megadose/holehe" target="_blank">megadose / holehe</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 13,293 · <span class="plus">+1,287 本周</span></span>
+</div>
+</div>
+<div class="card-desc">开源项目 holehe：提供实用的技术解决方案与工具，帮助开发者提升工作效率。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>功能完整：实现核心功能，满足典型使用需求</li><li>代码质量：遵循良好编程实践，易于维护和扩展</li><li>社区支持：活跃的开发社区和持续的功能更新</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">开发工具</span><span class="scenario-tag">系统集成</span><span class="scenario-tag">自动化脚本</span><span class="scenario-tag">学习参考</span>
+</div>
+</div>
+
+<!-- 13 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">13</span><a href="https://github.com/Lightricks/LTX-2" target="_blank">Lightricks / LTX-2</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 9,057 · <span class="plus">+497 本周</span></span>
+</div>
+</div>
+<div class="card-desc">开源项目 LTX-2：提供实用的技术解决方案与工具，帮助开发者提升工作效率。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>功能完整：实现核心功能，满足典型使用需求</li><li>代码质量：遵循良好编程实践，易于维护和扩展</li><li>社区支持：活跃的开发社区和持续的功能更新</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">开发工具</span><span class="scenario-tag">系统集成</span><span class="scenario-tag">自动化脚本</span><span class="scenario-tag">学习参考</span>
+</div>
+</div>
+
+</div>
+
+<footer>
+<p>Powered by 🐟 小鸟游星野 · 数据来源 <a href="https://github.com/trending?since=weekly" target="_blank">GitHub Trending</a></p>
+</footer>
+</div>
+</body>
+</html>
