@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub AI/ML 周报 · 2026-08-24</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC","PingFang SC",sans-serif;background:linear-gradient(135deg, #1e3a8a 0%, #3b82f6 40%, #60a5fa 100%);min-height:100vh;color:#1a1a2e}
+.container{max-width:800px;margin:0 auto;padding:40px 20px 60px}
+header{text-align:center;padding:50px 20px 30px;color:#fff}
+header h1{font-size:2.4em;font-weight:800;text-shadow:0 2px 10px rgba(0,0,0,.15);margin-bottom:8px}
+header .date{font-size:1em;opacity:.8;margin-bottom:4px}
+header .desc{font-size:.88em;opacity:.6;max-width:500px;margin:0 auto;line-height:1.6}
+.stats-bar{display:flex;justify-content:center;gap:24px;margin:20px 0 10px;flex-wrap:wrap}
+.stat{background:rgba(255,255,255,.12);border-radius:12px;padding:10px 20px;color:#fff;text-align:center;min-width:100px}
+.stat .num{font-size:1.5em;font-weight:700}
+.stat .label{font-size:.75em;opacity:.7;margin-top:2px}
+.cards{display:flex;flex-direction:column;gap:18px;margin-top:30px}
+.card{background:rgba(255,255,255,.95);border-radius:16px;padding:24px 28px;box-shadow:0 4px 20px rgba(0,0,0,.06);border:1px solid rgba(255,255,255,.6);transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.1)}
+.card-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.card-title{font-size:1.15em;font-weight:700}
+.card-title a{color:#7e22ce;text-decoration:none}
+.card-title a:hover{text-decoration:underline}
+.card-title .rank{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#a855f7,#7e22ce);color:#fff;font-size:.75em;font-weight:700;margin-right:8px;flex-shrink:0}
+.card-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lang-tag{display:inline-block;padding:2px 10px;border-radius:20px;font-size:.75em;font-weight:600;background:#f3e8ff;color:#581c87;border:1px solid #e9d5ff}
+.star-info{font-size:.82em;color:#888}
+.star-info .plus{color:#16a34a;font-weight:600}
+.card-desc{font-size:.92em;color:#444;margin-bottom:12px;line-height:1.6}
+.card-section-title{font-size:.78em;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.features{list-style:none;padding:0}
+.features li{position:relative;padding-left:18px;font-size:.88em;color:#555;margin-bottom:4px;line-height:1.5}
+.features li::before{content:"";position:absolute;left:0;top:7px;width:8px;height:8px;border-radius:50%;background:#7e22ce}
+.scenario-tags{display:flex;flex-wrap:wrap;gap:6px}
+.scenario-tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:.75em;font-weight:500;background:#faf5ff;color:#581c87;border:1px solid #e9d5ff}
+.archive-link{display:inline-block;margin-bottom:24px;color:rgba(255,255,255,.8);text-decoration:none;font-size:.9em;font-weight:500}
+.archive-link:hover{text-decoration:underline}
+footer{text-align:center;color:rgba(255,255,255,.6);font-size:.8em;margin-top:50px;padding-top:20px;border-top:1px solid rgba(255,255,255,.15)}
+footer a{color:rgba(255,255,255,.7);text-decoration:none}
+@media(max-width:600px){.container{padding:20px 14px 40px}header h1{font-size:1.8em}.card{padding:18px 16px}.stats-bar{gap:10px}.stat{min-width:80px;padding:8px 14px}.stat .num{font-size:1.2em}}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>🔬 GitHub AI/ML 周报</h1>
+<div class="date">2026-08-24 · Weekly Trending</div>
+<div class="desc">本周 GitHub 上最热门的 AI / 机器学习开源项目精选</div>
+</header>
+
+<div class="stats-bar">
+<div class="stat"><div class="num">5</div><div class="label">入选项目</div></div>
+<div class="stat"><div class="num">17,902</div><div class="label">本周总增星</div></div>
+<div class="stat"><div class="num">2</div><div class="label">编程语言</div></div>
+</div>
+
+<a class="archive-link" href="archive/index.html">📚 历史周报合集 →</a>
+
+<div class="cards">
+
+<!-- 1 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">1</span><a href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank">harry0703 / MoneyPrinterTurbo</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 115,305 · <span class="plus">+11,167 本周</span></span>
+</div>
+</div>
+<div class="card-desc">开源项目 MoneyPrinterTurbo：提供实用的技术解决方案与工具，帮助开发者提升工作效率。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>功能完整：实现核心功能，满足典型使用需求</li><li>代码质量：遵循良好编程实践，易于维护和扩展</li><li>社区支持：活跃的开发社区和持续的功能更新</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">开发工具</span><span class="scenario-tag">系统集成</span><span class="scenario-tag">自动化脚本</span><span class="scenario-tag">学习参考</span>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">2</span><a href="https://github.com/volcengine/OpenViking" target="_blank">volcengine / OpenViking</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 32,490 · <span class="plus">+3,799 本周</span></span>
+</div>
+</div>
+<div class="card-desc">开源项目 OpenViking：提供实用的技术解决方案与工具，帮助开发者提升工作效率。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>功能完整：实现核心功能，满足典型使用需求</li><li>代码质量：遵循良好编程实践，易于维护和扩展</li><li>社区支持：活跃的开发社区和持续的功能更新</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">开发工具</span><span class="scenario-tag">系统集成</span><span class="scenario-tag">自动化脚本</span><span class="scenario-tag">学习参考</span>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">3</span><a href="https://github.com/jundot/omlx" target="_blank">jundot / omlx</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 20,449 · <span class="plus">+1,671 本周</span></span>
+</div>
+</div>
+<div class="card-desc">开源项目 omlx：提供实用的技术解决方案与工具，帮助开发者提升工作效率。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>功能完整：实现核心功能，满足典型使用需求</li><li>代码质量：遵循良好编程实践，易于维护和扩展</li><li>社区支持：活跃的开发社区和持续的功能更新</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">开发工具</span><span class="scenario-tag">系统集成</span><span class="scenario-tag">自动化脚本</span><span class="scenario-tag">学习参考</span>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">4</span><a href="https://github.com/apache/maka" target="_blank">apache / maka</a></div>
+<div class="card-meta">
+<span class="lang-tag">TypeScript</span>
+<span class="star-info">⭐ 2,357 · <span class="plus">+859 本周</span></span>
+</div>
+</div>
+<div class="card-desc">开源项目 maka：提供实用的技术解决方案与工具，帮助开发者提升工作效率。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>功能完整：实现核心功能，满足典型使用需求</li><li>代码质量：遵循良好编程实践，易于维护和扩展</li><li>社区支持：活跃的开发社区和持续的功能更新</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">开发工具</span><span class="scenario-tag">系统集成</span><span class="scenario-tag">自动化脚本</span><span class="scenario-tag">学习参考</span>
+</div>
+</div>
+
+<!-- 5 -->
+<div class="card">
+<div class="card-head">
+<div class="card-title"><span class="rank">5</span><a href="https://github.com/anthropics/claude-plugins-community" target="_blank">anthropics / claude-plugins-community</a></div>
+<div class="card-meta">
+<span class="lang-tag">Python</span>
+<span class="star-info">⭐ 12,000 · <span class="plus">+406 本周</span></span>
+</div>
+</div>
+<div class="card-desc">开源项目 claude-plugins-community：提供实用的技术解决方案与工具，帮助开发者提升工作效率。</div>
+<div class="card-section-title">核心功能</div>
+<ul class="features">
+<li>功能完整：实现核心功能，满足典型使用需求</li><li>代码质量：遵循良好编程实践，易于维护和扩展</li><li>社区支持：活跃的开发社区和持续的功能更新</li>
+</ul>
+<div class="card-section-title">适用场景</div>
+<div class="scenario-tags">
+<span class="scenario-tag">开发工具</span><span class="scenario-tag">系统集成</span><span class="scenario-tag">自动化脚本</span><span class="scenario-tag">学习参考</span>
+</div>
+</div>
+
+</div>
+
+<footer>
+<p>Powered by 🐟 小鸟游星野 · 数据来源 <a href="https://github.com/trending?since=weekly" target="_blank">GitHub Trending</a></p>
+</footer>
+</div>
+</body>
+</html>

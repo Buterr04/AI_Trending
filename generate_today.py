@@ -9,7 +9,8 @@ from bs4 import BeautifulSoup
 import time
 
 # Today's date
-TODAY = "2026-08-17"
+import os
+TODAY = os.environ.get("TODAY", "2026-08-24")
 
 # GitHub Trending API (simulated web scraping)
 def get_github_trending():
